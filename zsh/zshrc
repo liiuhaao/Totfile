@@ -1,0 +1,20 @@
+# History
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
+setopt HIST_IGNORE_ALL_DUPS
+
+source ~/.zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+source ~/.zsh/fzf-tab.zsh
+source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ~/.zsh/plugins/zsh-z/zsh-z.plugin.zsh
+source ~/.zsh/plugins/zsh-autopair/autopair.zsh
+
+source ~/.zsh/vi.zsh
+source ~/.zsh/alias.zsh
+source ~/.zsh/prompt.zsh
+source ~/.zsh/bindkey.zsh
+source ~/.zsh/export.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

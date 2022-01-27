@@ -1,0 +1,11 @@
+[user]
+	email = 1193535804@qq.com
+	name = liuhao
+[init]
+	defaultBranch = main
+[http]
+	sslVerify = false
+[core]
+	editor = nvim
+[credential]
+	helper = store
