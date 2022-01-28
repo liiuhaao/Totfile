@@ -1,5 +1,5 @@
 export MANPAGER="nvim +Man!"
-export PATH="$PATH:$HOME/Scripts"
+export PATH="$PATH:$HOME/Scripts:$HOME/.local/bin"
 export EDITOR="nvim"
 export TERMINAL="alacritty"
 export READER="zathura"
