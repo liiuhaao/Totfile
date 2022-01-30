@@ -5,7 +5,7 @@ require("sidebar-nvim").setup({
     side = "left",
     initial_width = 30,
     hide_statusline = false,
-    update_interval = 1000,
+    update_interval = 1,
     sections = { "buffers", "files", "todos", "diagnostics", "git" },
     section_separator = { "", "-----", "" },
     containers = {
