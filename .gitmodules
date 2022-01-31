@@ -1,9 +1,6 @@
 [submodule "zsh/plugins/zsh-autopair"]
 	path = zsh/plugins/zsh-autopair
 	url = https://github.com/hlissner/zsh-autopair.git
-[submodule "zsh/plugins/ranger-devicons2"]
-	path = zsh/plugins/ranger-devicons2
-	url = https://github.com/cdump/ranger-devicons2
 [submodule "zsh/plugins/fzf-tab"]
 	path = zsh/plugins/fzf-tab
 	url = https://github.com/Aloxaf/fzf-tab.git
