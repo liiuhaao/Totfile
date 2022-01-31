@@ -15,6 +15,5 @@ source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/alias.zsh
 source ~/.config/zsh/prompt.zsh
 source ~/.config/zsh/bindkey.zsh
-source ~/.config/zsh/export.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
