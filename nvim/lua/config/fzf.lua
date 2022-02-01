@@ -24,19 +24,19 @@ require("fzf-lua").setup({
         -- "aboveleft vnew   : split left
         -- Only valid when using a float window
         -- (i.e. when 'split' is not defined, default)
-        height = 0.85, -- window height
+        height = 0.80, -- window height
         width = 0.80, -- window width
-        row = 0.35, -- window row position (0=top, 1=bottom)
+        row = 0.50, -- window row position (0=top, 1=bottom)
         col = 0.50, -- window col position (0=left, 1=right)
         -- border argument passthrough to nvim_open_win(), also used
         -- to manually draw the border characters around the preview
         -- window, can be set to 'false' to remove all borders or to
         -- 'none', 'single', 'double' or 'rounded' (default)
-        border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+        border = "single",
         fullscreen = false, -- start fullscreen?
         hl = {
             normal = "Normal", -- window normal color (fg+bg)
-            border = "Normal", -- border color (try 'FloatBorder')
+            border = "FloatBorder", -- border color (try 'FloatBorder')
             -- Only valid with the builtin previewer:
             cursor = "Cursor", -- cursor highlight (grep/LSP matches)
             cursorline = "CursorLine", -- cursor line
@@ -266,14 +266,14 @@ require("fzf-lua").setup({
             },
         },
         icons = {
-            ["M"] = { icon = "M", color = "yellow" },
-            ["D"] = { icon = "D", color = "red" },
-            ["A"] = { icon = "A", color = "green" },
-            ["?"] = { icon = "?", color = "magenta" },
+            -- ["M"] = { icon = "M", color = "yellow" },
+            -- ["D"] = { icon = "D", color = "red" },
+            -- ["A"] = { icon = "A", color = "green" },
+            ["?"] = { icon = "★", color = "yellow" },
             -- override git icons?
-            -- ["M"]        = { icon = "★", color = "red" },
-            -- ["D"]        = { icon = "✗", color = "red" },
-            -- ["A"]        = { icon = "+", color = "green" },
+            ["M"] = { icon = "✗", color = "red" },
+            ["D"] = { icon = "", color = "red" },
+            ["A"] = { icon = "+", color = "green" },
         },
     },
     grep = {

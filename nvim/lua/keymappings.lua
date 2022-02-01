@@ -50,7 +50,7 @@ map("i", "<C-b>", "<Left>", { noremap = true, silent = true })
 map("n", "s", ":source ~/.config/nvim/init.lua<cr>", { noremap = true })
 
 map("n", "<Leader><S-Tab>", ":Lexplore %:p:h<CR>", { noremap = true, silent = true })
-map("n", "<Leader><Tab>", ":Lexplore<CR>", { noremap = true, silent = true })
+-- map("n", "<Leader><Tab>", ":Lexplore<CR>", { noremap = true, silent = true })
 map("n", "<Leader>cd", ":cd %:h<CR>", { noremap = true, silent = false })
 
-map("n", "<Tab>", ":b ", { noremap = true, silent = false })
+-- map("n", "<Tab>", ":b ", { noremap = true, silent = false })

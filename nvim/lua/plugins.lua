@@ -113,12 +113,13 @@ return require("packer").startup(function()
         end,
     })
 
-    -- use({
-    --     "romgrk/barbar.nvim",
-    --     config = function()
-    --         require("config.barbar")
-    --     end,
-    -- })
+	use({
+	    "noib3/nvim-cokeline",
+	    config = function()
+		require("config.cokeline")
+	    end,
+	})
+
     use({
         "goolord/alpha-nvim",
         config = function()
@@ -127,9 +128,16 @@ return require("packer").startup(function()
     })
 
     use({
-        "kevinhwang91/rnvimr",
+        "kyazdani42/nvim-tree.lua",
         config = function()
-            require("config.rnvimr")
+            require("config.nvim-tree")
+        end,
+    })
+
+    use({
+        "is0n/fm-nvim",
+        config = function()
+            require("config.fm-nvim")
         end,
     })
 
