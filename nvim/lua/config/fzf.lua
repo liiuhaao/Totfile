@@ -1,6 +1,7 @@
 map("n", "<Leader>ff", ":FzfLua files<CR>", { noremap = true, silent = true })
 map("n", "<Leader>fg", ":FzfLua live_grep<CR>", { noremap = true, silent = true })
 map("n", "<Leader>fo", ":FzfLua oldfiles<CR>", { noremap = true, silent = true })
+map("n", "<Leader>fb", ":FzfLua buffers<CR>", { noremap = true, silent = true })
 map("n", "<Leader>fp", ":FzfLua builtin<CR>", { noremap = true, silent = true })
 map("n", "<Leader>ca", ":FzfLua lsp_code_actions<CR>", { noremap = true, silent = true })
 map("n", "<Leader>ws", ":FzfLua lsp_workspace_symbols<CR>", { noremap = true, silent = true })

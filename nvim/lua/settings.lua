@@ -69,7 +69,8 @@ vim.opt.listchars:append("eol:")
 vim.o.clipboard = "unnamedplus"
 vim.g.netrw_winsize = -30
 vim.g.netrw_banner = 0
-vim.opt.background = "dark"
+
+vim.opt.autochdir = true
 
 vim.cmd([[highlight IndentBlanklineContextChar guifg=#fb4934 gui=nocombine]])
 vim.cmd([[syntax on]])
@@ -77,3 +78,4 @@ vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[hi! Normal guibg=NONE]])
 vim.cmd([[au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=500, on_visual=true}]])
 vim.cmd([[filetype plugin on]])
+

@@ -8,12 +8,7 @@ map("n", "<ESC>", "<cmd>noh<CR>", { noremap = true, silent = true })
 map("n", "<Leader>k", ":bprevious<CR>", { noremap = true, silent = true })
 map("n", "<Leader>j", ":bnext<CR>", { noremap = true, silent = true })
 map("n", "<Leader>q", ":bd<CR>", { noremap = true, silent = true })
-map(
-    "n",
-    "<A-b>",
-    "<cmd>execute'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>",
-    { noremap = true, silent = true }
-)
+map("n", "<A-b>", "<cmd>execute'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", { noremap = true, silent = true })
 
 -- map("v", "<", "<gv", { noremap = true, silent = true })
 -- map("v", ">", ">gv", { noremap = true, silent = true })
@@ -54,3 +49,5 @@ map("i", "<C-b>", "<Left>", { noremap = true, silent = true })
 
 map("n", "s", ":source ~/.config/nvim/init.lua<cr>", { noremap = true })
 map("n", "<Leader><Tab>", ":Lexplore<cr>", { noremap = true, silent = true })
+
+map("n", "<Tab>", ":b ", { noremap = true, silent = false })

@@ -89,9 +89,8 @@ cmp.setup.cmdline("/", {
 })
 
 cmp.setup.cmdline(":", {
-    sources = cmp.config.sources({
+    sources = {
         { name = "path" },
-    }, {
         { name = "cmdline" },
-    }),
+    },
 })

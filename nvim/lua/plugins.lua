@@ -113,13 +113,12 @@ return require("packer").startup(function()
         end,
     })
 
-    use({
-        "romgrk/barbar.nvim",
-        config = function()
-            require("config.barbar")
-        end,
-    })
-
+    -- use({
+    --     "romgrk/barbar.nvim",
+    --     config = function()
+    --         require("config.barbar")
+    --     end,
+    -- })
     use({
         "goolord/alpha-nvim",
         config = function()
@@ -134,13 +133,13 @@ return require("packer").startup(function()
         end,
     })
 
-    use({
-        "sidebar-nvim/sidebar.nvim",
-        branch = "dev",
-        config = function()
-            require("config.sidebar")
-        end,
-    })
+    -- use({
+    --     "sidebar-nvim/sidebar.nvim",
+    --     branch = "dev",
+    --     config = function()
+    --         require("config.sidebar")
+    --     end,
+    -- })
 
     use({
         "dccsillag/magma-nvim",

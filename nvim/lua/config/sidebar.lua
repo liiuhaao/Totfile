@@ -17,4 +17,4 @@ require("sidebar-nvim").setup({
     todos = { ignored_paths = { "~" } },
     disable_closing_prompt = true,
 })
-map("n", "<Leader>s", ":SidebarNvimToggle<CR>", { noremap = true, silent = true })
+map("n", "<A-Tab>", ":SidebarNvimToggle<CR>", { noremap = true, silent = true })
