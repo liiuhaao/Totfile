@@ -25,8 +25,8 @@ map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 -- map("n", "<Leader>P", '"+P', { noremap = true, silent = true })
 -- map("v", "<Leader>P", '"+P', { noremap = true, silent = true })
 
-map("n", "<Leader>s", "<cmd>wincmd s<CR>", { noremap = true, silent = true })
-map("n", "<Leader>v", "<cmd>wincmd v<CR>", { noremap = true, silent = true })
+map("n", "<Leader>-", "<cmd>wincmd s<CR>", { noremap = true, silent = true })
+map("n", "<Leader>\\", "<cmd>wincmd v<CR>", { noremap = true, silent = true })
 
 -- map("n", "<A-K>", "<cmd>wincmd +<CR>", { noremap = true, silent = true })
 -- map("n", "<A-J>", "<cmd>wincmd -<CR>", { noremap = true, silent = true })
