@@ -67,10 +67,16 @@ vim.opt.listchars:append("extends:→")
 -- vim.opt.listchars:append("space:.")
 vim.opt.listchars:append("eol:")
 vim.o.clipboard = "unnamedplus"
-vim.g.netrw_winsize = -30
-vim.g.netrw_banner = 0
 
-vim.opt.autochdir = true
+vim.g.netrw_winsize = 20
+vim.g.netrw_banner = 0
+vim.g.netrw_liststyle = 3
+vim.g.netrw_keepdir = 0
+vim.g.netrw_localcopydircmd = "cp -r"
+vim.g.netrw_altv = 1
+vim.cmd([[hi! link netrwMarkFile Search]])
+
+vim.opt.autochdir = false
 
 vim.cmd([[highlight IndentBlanklineContextChar guifg=#fb4934 gui=nocombine]])
 vim.cmd([[syntax on]])
@@ -78,4 +84,3 @@ vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[hi! Normal guibg=NONE]])
 vim.cmd([[au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=500, on_visual=true}]])
 vim.cmd([[filetype plugin on]])
-
