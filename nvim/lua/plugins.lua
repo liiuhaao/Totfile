@@ -113,12 +113,12 @@ return require("packer").startup(function()
         end,
     })
 
-	use({
-	    "noib3/nvim-cokeline",
-	    config = function()
-		require("config.cokeline")
-	    end,
-	})
+    use({
+        "noib3/nvim-cokeline",
+        config = function()
+            require("config.cokeline")
+        end,
+    })
 
     use({
         "goolord/alpha-nvim",
