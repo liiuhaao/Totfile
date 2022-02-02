@@ -1,28 +1,9 @@
-vim.fn.sign_define("LspDiagnosticsSignError", {
-    text = "",
-    texthl = "LspDiagnosticsSignError",
-    numhl = "LspDiagnosticsSignError",
-})
-vim.fn.sign_define("LspDiagnosticsSignWarning", {
-    texthl = "LspDiagnosticsSignWarning",
-    text = "",
-    numhl = "LspDiagnosticsSignWarning",
-})
-vim.fn.sign_define("LspDiagnosticsSignHint", {
-    texthl = "LspDiagnosticsSignHint",
-    text = "",
-    numhl = "LspDiagnosticsSignHint",
-})
-vim.fn.sign_define("LspDiagnosticsSignInformation", {
-    texthl = "LspDiagnosticsSignInformation",
-    text = "",
-    numhl = "LspDiagnosticsSignInformation",
-})
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = { prefix = " ", spacing = 4 },
-    signs = true,
-    underline = true,
-})
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "none" })
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "none" })
 
@@ -72,15 +53,15 @@ vim.diagnostic.config({
 })
 
 vim.cmd([[
-  highlight DiagnosticLineNrError guifg=#fb4934 gui=bold
+  highlight DiagnosticLineNrError guibg=#fb4934 guifg=#fb4934 gui=bold
   highlight DiagnosticLineNrWarn guifg=#fe8019 gui=bold
   highlight DiagnosticLineNrInfo guifg=#83a598 gui=bold
   highlight DiagnosticLineNrHint guifg=#8ec07c gui=bold
 
-  sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
-  sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
-  sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
-  sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+  " sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+  " sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+  " sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+  " sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
 ]])
 
 map("n", "<Leader>dl", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
@@ -103,7 +84,7 @@ local on_attach = function(client, bufnr)
 
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", { noremap = true, silent = true })
     vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", { noremap = true, silent = true })
-    vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true })
+    -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<Leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", { noremap = true, silent = true })
     -- vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", { noremap = true, silent = true })
 end
 
@@ -144,7 +125,7 @@ require("lspconfig").sumneko_lua.setup({
 })
 require("lspconfig").jdtls.setup({ on_attach = on_attach, capabilities = capabilities, cmd = { "/usr/bin/jdtls" } })
 
-require("lspconfig").pylsp.setup({on_attach=on_attach, capabilities = capabilities })
+require("lspconfig").pylsp.setup({ on_attach = on_attach, capabilities = capabilities })
 -- require("lspconfig").pyright.setup({ on_attach = on_attach, capabilities = capabilities })
 require("lspconfig").bashls.setup({ on_attach = on_attach, capabilities = capabilities })
 require("lspconfig").yamlls.setup({ on_attach = on_attach, capabilities = capabilities })
