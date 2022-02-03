@@ -12,5 +12,3 @@ export TERMINAL="alacritty"
 export READER="zathura"
 export BROWSER="qutebrowser"
 
-export all_proxy=socks5://127.0.0.1:9050
-export GOPROXY=https://goproxy.io/
