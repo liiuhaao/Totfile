@@ -120,12 +120,12 @@ return require("packer").startup(function()
         end,
     })
 
-    -- use({
-    --     "goolord/alpha-nvim",
-    --     config = function()
-    --         require("alpha").setup(require("alpha.themes.startify").opts)
-    --     end,
-    -- })
+    use({
+        "goolord/alpha-nvim",
+        config = function()
+            require("alpha").setup(require("alpha.themes.startify").opts)
+        end,
+    })
 
     use({
         "kyazdani42/nvim-tree.lua",
