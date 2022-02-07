@@ -8,7 +8,7 @@ map("n", "<ESC>", "<cmd>noh<CR>", { noremap = true, silent = true })
 map("n", "<Leader>k", ":bprevious<CR>", { noremap = true, silent = true })
 map("n", "<Leader>j", ":bnext<CR>", { noremap = true, silent = true })
 map("n", "<Leader>q", ":bp|bd #<CR>", { noremap = true, silent = true })
-map("n", "<A-b>", "<cmd>execute'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", { noremap = true, silent = true })
+map("n", "<Leader>b", "<cmd>execute'set showtabline=' . (&showtabline ==# 0 ? 2 : 0)<CR>", { noremap = true, silent = true })
 
 -- map("v", "<", "<gv", { noremap = true, silent = true })
 -- map("v", ">", ">gv", { noremap = true, silent = true })

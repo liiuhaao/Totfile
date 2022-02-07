@@ -1,5 +1,5 @@
 require("nvim-tree").setup({
-    disable_netrw = true,
+    disable_netrw = false,
     hijack_netrw = true,
     open_on_setup = false,
     ignore_ft_on_setup = {},
@@ -92,7 +92,7 @@ require("nvim-tree").setup({
     },
 })
 vim.g.nvim_tree_quit_on_open = 0
-map("n", "<Tab>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+map("n", "<Leader><Tab>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 vim.g.nvim_tree_icons = {
     default = "",
     symlink = "",
