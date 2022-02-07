@@ -18,5 +18,5 @@ source ~/.config/zsh/bindkey.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export all_proxy=socks5://127.0.0.1:9050
+# export all_proxy=socks5://127.0.0.1:9050
 export GOPROXY=https://goproxy.io/
