@@ -74,6 +74,10 @@ return require("packer").startup(function()
     })
 
     use({
+        "xiyaowong/nvim-cursorword",
+    })
+
+    use({
         "lukas-reineke/indent-blankline.nvim",
         config = function()
             require("config.indent-blankline")
