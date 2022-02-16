@@ -47,6 +47,7 @@ return require("packer").startup(function()
             { "hrsh7th/cmp-calc" },
             { "hrsh7th/cmp-emoji" },
             { "kdheepak/cmp-latex-symbols" },
+            { "hrsh7th/cmp-nvim-lsp-signature-help" },
             { "L3MON4D3/LuaSnip" },
             { "saadparwaiz1/cmp_luasnip" },
             { "rafamadriz/friendly-snippets" },
