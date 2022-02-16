@@ -35,8 +35,8 @@ cmp.setup({
                 fallback()
             end
         end, { "i", "s" }),
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
-        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
+        ["<C-u>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
+        ["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
         ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ["<C-e>"] = cmp.mapping({
@@ -56,6 +56,7 @@ cmp.setup({
         { name = "latex_symbols" },
         { name = "luasnip" },
         { name = "tmux" },
+        { name = "nvim_lsp_signature_help" },
     },
 
     formatting = {
@@ -70,6 +71,7 @@ cmp.setup({
                 luasnip = "[SNIP]",
                 nvim_lua = "[LUA]",
                 tmux = "[TMUX]",
+                nvim_lsp_signature_help = "SIGNATURE",
             })[entry.source.name]
             return vim_item
         end,
