@@ -50,7 +50,7 @@ vim.opt.completeopt = "noinsert,menuone,noselect"
 vim.opt.emoji = true
 
 vim.opt.splitbelow = true
-vim.opt.splitright = false
+vim.opt.splitright = true
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
