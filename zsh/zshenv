@@ -5,7 +5,7 @@ export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--bind=tab:down,shift-tab:up,ctrl-space:toggle --reverse'
 
 export MANPAGER="nvim +Man!"
-export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin:$HOME/.cargo/bin"
 export VISUAL="nvim"
 export EDITOR="nvim"
 
