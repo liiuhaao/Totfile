@@ -1,30 +1,13 @@
 local get_hex = require("cokeline/utils").get_hex
 
-local green = "#b8bb26"
-local orange = "#fe8019"
-
-local bg1 = "#3c3836"
-local bg0 = "#282828"
-local bg2 = "#504945"
-local bg3 = "#665c54"
-local bg4 = "#7c6f64"
-
-local fg0 = "#fbf1c7"
-local fg1 = "#ebdbb2"
-local fg2 = "#d5c4a1"
-local fg3 = "#bdae93"
-local fg4 = "#a89984"
-
 require("cokeline").setup({
     default_hl = {
-        focused = {
-            fg = fg2,
-            bg = bg1,
-        },
-        unfocused = {
-            fg = fg2,
-            bg = bg0,
-        },
+        fg = function(buffer)
+            return buffer.is_focused and get_hex("Normal", "fg") or get_hex("Normal", "fg")
+        end,
+        bg = function(buffer)
+            return buffer.is_focused and get_hex("ColorColumn", "bg") or get_hex("Normal", "bg")
+        end,
     },
 
     components = {
@@ -32,7 +15,7 @@ require("cokeline").setup({
             text = "▎",
             hl = {
                 fg = function(buffer)
-                    return buffer.is_modified and orange or green
+                    return buffer.is_modified and get_hex("healthWarning", "bg") or get_hex("healthSuccess", "bg")
                 end,
             },
         },
@@ -67,27 +50,25 @@ require("cokeline").setup({
             text = " ",
         },
     },
-    rendering = {
-        left_sidebar = {
-            filetype = "NvimTree",
-            components = {
-                {
-                    text = "  NvimTree",
-                    hl = {
-                        fg = orange,
-                        bg = get_hex("NvimTreeNormal", "bg"),
-                        style = "bold",
-                    },
+    sidebar = {
+        filetype = "NvimTree",
+        components = {
+            {
+                text = "  NvimTree",
+                hl = {
+                    fg = get_hex("NvimTreeFolderName", "fg"),
+                    bg = get_hex("NvimTreeNormal", "bg"),
+                    style = "bold",
                 },
             },
         },
     },
 })
-map("n", "<Leader>k", "<Plug>(cokeline-focus-prev)", { silent = true })
-map("n", "<Leader>j", "<Plug>(cokeline-focus-next)", { silent = true })
-map("n", "<Leader>K", "<Plug>(cokeline-switch-prev)", { silent = true })
-map("n", "<Leader>J", "<Plug>(cokeline-switch-next)", { silent = true })
+map("n", "<A-k>", "<Plug>(cokeline-focus-prev)", { silent = true })
+map("n", "<A-j>", "<Plug>(cokeline-focus-next)", { silent = true })
+map("n", "<A-K>", "<Plug>(cokeline-switch-prev)", { silent = true })
+map("n", "<A-J>", "<Plug>(cokeline-switch-next)", { silent = true })
 
 for i = 1, 9 do
-    map("n", ("<Leader>%s"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
+    map("n", ("<A-%s>"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
 end
