@@ -10,7 +10,7 @@ ln -sf $(pwd)/zsh/zprofile ~/.zprofile
 ln -sf $(pwd)/zsh/zshrc ~/.zshrc
 ./zsh/fzf/install
 
-rm -rf ~/.config/ranger 
+rm -rf ~/.config/ranger
 ln -sf $(pwd)/ranger ~/.config/ranger
 
 rm -rf ~/.tmux.conf
@@ -21,3 +21,6 @@ ln -sf $(pwd)/gitconfig ~/.gitconfig
 
 rm -rf ~/.clang-format
 ln -sf $(pwd)/clang-format ~/.clang-format
+
+rm -rf ~/.condarc
+ln -sf $(pwd)/condarc ~/.condarc

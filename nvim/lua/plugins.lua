@@ -124,6 +124,12 @@ return require("packer").startup(function()
             require("config.cokeline")
         end,
     })
+    use({
+        "famiu/bufdelete.nvim",
+        config = function()
+            require("config.cokeline")
+        end,
+    })
 
     use({
         "goolord/alpha-nvim",

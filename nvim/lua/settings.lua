@@ -3,7 +3,7 @@ vim.opt.encoding = "UTF-8"
 
 vim.opt.updatetime = 1
 vim.opt.swapfile = false
-vim.opt.ruler = true
+            vim.opt.ruler = true
 vim.opt.scrolloff = 2
 vim.opt.sidescrolloff = 15
 vim.opt.termguicolors = true
