@@ -5,7 +5,6 @@ HISTFILE=~/.cache/zsh/history
 setopt HIST_IGNORE_ALL_DUPS
 
 source ~/.config/zsh/plugins/conda-zsh-completion/conda-zsh-completion.plugin.zsh
-source ~/.config/zsh/plugins/zsh-pip-completion/zsh-pip-completion.plugin.zsh
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 source ~/.config/zsh/fzf-tab.zsh
 
