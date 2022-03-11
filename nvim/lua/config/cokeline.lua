@@ -13,29 +13,23 @@ require("cokeline").setup({
     components = {
         {
             text = "▎",
-            hl = {
-                fg = function(buffer)
-                    return buffer.is_modified and get_hex("healthWarning", "bg") or get_hex("healthSuccess", "bg")
-                end,
-            },
+            fg = function(buffer)
+                return buffer.is_modified and get_hex("healthWarning", "bg") or get_hex("healthSuccess", "bg")
+            end,
         },
         {
             text = function(buffer)
                 return "     " .. buffer.devicon.icon
             end,
-            hl = {
-                fg = function(buffer)
-                    return buffer.devicon.color
-                end,
-            },
+            fg = function(buffer)
+                return buffer.devicon.color
+            end,
         },
         {
             text = function(buffer)
                 return buffer.unique_prefix
             end,
-            hl = {
-                fg = get_hex("Comment", "fg"),
-            },
+            fg = get_hex("Comment", "fg"),
         },
         {
             text = function(buffer)
@@ -55,11 +49,9 @@ require("cokeline").setup({
         components = {
             {
                 text = "  NvimTree",
-                hl = {
-                    fg = get_hex("NvimTreeFolderName", "fg"),
-                    bg = get_hex("NvimTreeNormal", "bg"),
-                    style = "bold",
-                },
+                fg = get_hex("NvimTreeFolderName", "fg"),
+                bg = get_hex("NvimTreeNormal", "bg"),
+                style = "bold",
             },
         },
     },
