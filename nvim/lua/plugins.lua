@@ -109,10 +109,7 @@ return require("packer").startup(function()
     })
 
     use({
-        "vijaymarupudi/nvim-fzf",
-        requires = {
-            use("ibhagwan/fzf-lua"),
-        },
+        "ibhagwan/fzf-lua",
         config = function()
             require("config.fzf")
         end,
