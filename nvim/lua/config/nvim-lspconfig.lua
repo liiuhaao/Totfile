@@ -69,7 +69,7 @@ map("n", "<Leader>dc", "<cmd>lua vim.diagnostic.open_float(nil, {focus=false, sc
 map("n", "<Leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
 map("n", "<Leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 -- map("n", "<Leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", { noremap = true, silent = true })
-map("n", "<Leader><Leader>", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
+map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", { noremap = true, silent = true })
 
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -122,8 +122,8 @@ require("lspconfig").sumneko_lua.setup({
     on_attach = on_attach,
     capabilities = capabilities,
     cmd = { "/usr/bin/lua-language-server" },
+    require("lspconfig").jdtls.setup({ on_attach = on_attach, capabilities = capabilities, cmd = { "/usr/bin/jdtls" } }),
 })
-require("lspconfig").jdtls.setup({ on_attach = on_attach, capabilities = capabilities, cmd = { "/usr/bin/jdtls" } })
 
 require("lspconfig").pylsp.setup({ on_attach = on_attach, capabilities = capabilities })
 -- require("lspconfig").pyright.setup({ on_attach = on_attach, capabilities = capabilities })
