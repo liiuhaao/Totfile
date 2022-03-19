@@ -15,7 +15,7 @@ require("nvim-tree").setup({
         auto_open = true,
     },
     diagnostics = {
-        enable = false,
+        enable = true,
         icons = {
             hint = "",
             info = "",
@@ -24,7 +24,7 @@ require("nvim-tree").setup({
         },
     },
     update_focused_file = {
-        enable = false,
+        enable = true,
         update_cwd = false,
         ignore_list = {},
     },
@@ -33,12 +33,12 @@ require("nvim-tree").setup({
         args = {},
     },
     filters = {
-        dotfiles = false,
+        dotfiles = true,
         custom = {},
     },
     git = {
         enable = true,
-        ignore = true,
+        ignore = false,
         timeout = 500,
     },
     view = {
@@ -53,7 +53,7 @@ require("nvim-tree").setup({
         },
         number = false,
         relativenumber = false,
-        signcolumn = "yes",
+        signcolumn = "no",
     },
     trash = {
         cmd = "trash",
@@ -88,26 +88,5 @@ require("nvim-tree").setup({
     },
 })
 map("n", "<A-Tab>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
--- vim.g.nvim_tree_icons = {
---     default = "",
---     symlink = "",
---     git = {
---         deleted = "",
---         ignored = "◌",
---         renamed = "➜",
---         staged = "✓",
---         unmerged = "",
---         unstaged = "✗",
---         untracked = "★",
---     },
---     folder = {
---         default = "",
---         empty = "",
---         empty_open = "",
---         open = "",
---         symlink = "",
---         symlink_open = "",
---     },
--- }
 
 -- vim.cmd([[hi! NvimTreeNormal guibg=#282828]])

@@ -63,7 +63,6 @@ return require("packer").startup(function()
         requires = {
             { "p00f/nvim-ts-rainbow" },
             { "windwp/nvim-ts-autotag" },
-            { "andymass/vim-matchup" },
         },
         config = function()
             require("config.treesitter")
