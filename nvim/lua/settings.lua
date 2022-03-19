@@ -34,7 +34,7 @@ vim.opt.smartindent = true
 vim.opt.signcolumn = "no"
 vim.opt.number = true
 -- vim.opt.relativenumber = true
-vim.opt.laststatus = 1
+vim.opt.laststatus = 0
 
 vim.opt.linespace = 0
 vim.opt.cursorline = true
