@@ -3,7 +3,7 @@ vim.opt.encoding = "UTF-8"
 
 vim.opt.updatetime = 1
 vim.opt.swapfile = false
-            vim.opt.ruler = true
+vim.opt.ruler = true
 vim.opt.scrolloff = 2
 vim.opt.sidescrolloff = 15
 vim.opt.termguicolors = true
@@ -33,7 +33,7 @@ vim.opt.smartindent = true
 
 vim.opt.signcolumn = "no"
 vim.opt.number = true
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 vim.opt.laststatus = 0
 
 vim.opt.linespace = 0
@@ -54,7 +54,7 @@ vim.opt.splitright = true
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevelstart = 10
+vim.opt.foldlevelstart = 5
 
 vim.opt.showbreak = "﬌"
 vim.opt.background = "dark"

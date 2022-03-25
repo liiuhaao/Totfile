@@ -107,10 +107,10 @@ require("cokeline").setup({
     },
 })
 
-map("n", "<A-k>", "<Plug>(cokeline-focus-prev)", { silent = true })
-map("n", "<A-j>", "<Plug>(cokeline-focus-next)", { silent = true })
-map("n", "<A-K>", "<Plug>(cokeline-switch-prev)", { silent = true })
-map("n", "<A-J>", "<Plug>(cokeline-switch-next)", { silent = true })
+map("n", "<A-p>", "<Plug>(cokeline-focus-prev)", { silent = true })
+map("n", "<A-n>", "<Plug>(cokeline-focus-next)", { silent = true })
+map("n", "<A-P>", "<Plug>(cokeline-switch-prev)", { silent = true })
+map("n", "<A-N>", "<Plug>(cokeline-switch-next)", { silent = true })
 
 for i = 1, 9 do
     map("n", ("<A-%s>"):format(i), ("<Plug>(cokeline-focus-%s)"):format(i), { silent = true })
