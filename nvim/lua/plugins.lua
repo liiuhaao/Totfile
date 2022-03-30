@@ -163,4 +163,10 @@ return require("packer").startup(function()
             require("config.magma-nvim")
         end,
     })
+    use({
+        "aserowy/tmux.nvim",
+        config = function()
+            require("config.tmux")
+        end,
+    })
 end)
