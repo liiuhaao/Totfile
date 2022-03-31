@@ -54,7 +54,7 @@ vim.opt.splitright = true
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevelstart = 5
+vim.opt.foldlevelstart = 10
 
 vim.opt.showbreak = "﬌"
 vim.opt.background = "dark"
