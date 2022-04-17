@@ -53,7 +53,7 @@ vim.diagnostic.config({
 })
 
 vim.cmd([[
-  highlight DiagnosticLineNrError guibg=#fb4934 guifg=#fb4934 gui=bold
+  highlight DiagnosticLineNrError guifg=#fb4934 gui=bold
   highlight DiagnosticLineNrWarn guifg=#fe8019 gui=bold
   highlight DiagnosticLineNrInfo guifg=#83a598 gui=bold
   highlight DiagnosticLineNrHint guifg=#8ec07c gui=bold

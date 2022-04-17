@@ -92,9 +92,9 @@ return require("packer").startup(function()
     })
 
     use({
-        "numToStr/Comment.nvim",
+        "terrortylor/nvim-comment",
         config = function()
-            require("Comment").setup()
+            require("nvim_comment").setup()
         end,
     })
 
@@ -105,6 +105,18 @@ return require("packer").startup(function()
                 enable_check_bracket_line = false,
             })
         end,
+    })
+
+    use({
+        "lewis6991/gitsigns.nvim",
+        config = function()
+            require("gitsigns").setup()
+        end,
+    })
+
+    use({
+        "TimUntersberger/neogit",
+        requires = "nvim-lua/plenary.nvim",
     })
 
     use({
@@ -120,10 +132,11 @@ return require("packer").startup(function()
             require("config.cokeline")
         end,
     })
+
     use({
         "famiu/bufdelete.nvim",
         config = function()
-            require("config.cokeline")
+            require("config.bufdelete")
         end,
     })
 
@@ -163,10 +176,21 @@ return require("packer").startup(function()
             require("config.magma-nvim")
         end,
     })
+
     use({
         "aserowy/tmux.nvim",
         config = function()
             require("config.tmux")
         end,
+    })
+
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = "cd app && npm install",
+        setup = function()
+            vim.g.mkdp_filetypes = { "markdown" }
+            vim.g.mkdp_browser = "qutebrowser"
+        end,
+        ft = { "markdown" },
     })
 end)
