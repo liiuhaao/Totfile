@@ -115,11 +115,6 @@ return require("packer").startup(function()
     })
 
     use({
-        "TimUntersberger/neogit",
-        requires = "nvim-lua/plenary.nvim",
-    })
-
-    use({
         "ibhagwan/fzf-lua",
         config = function()
             require("config.fzf")
