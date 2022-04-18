@@ -31,7 +31,7 @@ vim.opt.smarttab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes:1"
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.laststatus = 3
