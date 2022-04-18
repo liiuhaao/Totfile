@@ -34,7 +34,7 @@ vim.opt.smartindent = true
 vim.opt.signcolumn = "yes"
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.laststatus = 0
+vim.opt.laststatus = 3
 
 vim.opt.linespace = 0
 vim.opt.cursorline = true
@@ -84,4 +84,3 @@ vim.cmd([[hi! Normal guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi! VertSplit guibg=NONE ctermbg=NONE]])
 vim.cmd([[hi! Tablinefill guibg=NONE]])
 vim.cmd([[au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=500, on_visual=true}]])
-vim.cmd([[filetype plugin on]])

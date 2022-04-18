@@ -1,1 +1,1 @@
-map("n", "<A-q>", ":Bdelete", { noremap = true, silent = true })
+map("n", "<A-q>", ":Bdelete<CR>", { noremap = true, silent = true })

@@ -128,6 +128,13 @@ return require("packer").startup(function()
         end,
     })
 
+    use {
+        'feline-nvim/feline.nvim',
+        config = function()
+            require("config.feline")
+        end,
+    }
+
     use({
         "famiu/bufdelete.nvim",
         config = function()
