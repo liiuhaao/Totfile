@@ -3,17 +3,16 @@ local vi_mode_utils = require('feline.providers.vi_mode')
 
 local colors = {
     bg = 'NONE',
-    black = '#282828',
-    yellow = '#d8a657',
-    cyan = '#89b482',
-    blue = '#45707a',
-    green = '#a9b665',
-    orange = '#e78a4e',
-    violet = '#d3869b',
-    magenta = '#c14a4a',
-    white = '#a89984',
     fg = '#a89984',
-    red = '#ea6962',
+    black = '#282828',
+    violet = '#d3869b',
+    red= "#cc241d",
+    green= "#98971a",
+    yellow= "#d79921",
+    blue= "#458588",
+    magenta= "#b16286",
+    cyan= "#689d6a",
+    white= "#a89984",
 }
 
 local vi_mode_colors = {

@@ -50,3 +50,5 @@ map("n", "<Leader><S-Tab>", ":Lexplore %:p:h<CR>", { noremap = true, silent = tr
 map("n", "<Leader>cd", ":cd %:h<CR>", { noremap = true, silent = false })
 
 -- map("n", "<Tab>", ":b ", { noremap = true, silent = false })
+map("n", "d", "\"_d", { noremap = true, silent = true })
+map("v", "d", "\"_d", { noremap = true, silent = true })
