@@ -4,7 +4,8 @@
 
 alias proxy_up='export all_proxy=socks5://127.0.0.1:9050'
 alias proxy_down='unset all_proxy'
-alias ls='exa --icons --group-directories-first'
+# alias ls='exa --icons --group-directories-first'
+alias ls='ls --color'
 alias l='ls'
 alias lt='ls --tree'
 alias lat='ls -a --tree'

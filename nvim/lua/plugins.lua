@@ -187,6 +187,10 @@ return require("packer").startup(function()
     })
 
     use({
+        "tversteeg/registers.nvim"
+    })
+
+    use({
         "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function()
