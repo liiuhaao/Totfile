@@ -27,16 +27,6 @@ return require("packer").startup(function()
     })
 
     use({
-        "jose-elias-alvarez/null-ls.nvim",
-        requires = {
-            use("nvim-lua/plenary.nvim"),
-        },
-        config = function()
-            require("config.null-ls")
-        end,
-    })
-
-    use({
         "hrsh7th/nvim-cmp",
         requires = {
             { "hrsh7th/cmp-nvim-lsp" },
@@ -130,10 +120,14 @@ return require("packer").startup(function()
 
     use {
         'feline-nvim/feline.nvim',
+        requires = {
+            { "SmiteshP/nvim-navic" },
+        },
         config = function()
             require("config.feline")
         end,
     }
+
 
     use({
         "famiu/bufdelete.nvim",
@@ -162,14 +156,6 @@ return require("packer").startup(function()
             require("config.fm-nvim")
         end,
     })
-
-    -- use({
-    --     "sidebar-nvim/sidebar.nvim",
-    --     branch = "dev",
-    --     config = function()
-    --         require("config.sidebar")
-    --     end,
-    -- })
 
     use({
         "dccsillag/magma-nvim",

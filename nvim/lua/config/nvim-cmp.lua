@@ -60,6 +60,7 @@ cmp.setup({
     },
 
     formatting = {
+        fields = { "abbr", "kind", "menu" },
         format = function(entry, vim_item)
             vim_item.kind = vim.lsp.protocol.CompletionItemKind[vim_item.kind]
             vim_item.menu = ({
@@ -81,6 +82,7 @@ cmp.setup({
         ghost_text = true,
     },
 })
+
 cmp.setup.cmdline("/", {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {

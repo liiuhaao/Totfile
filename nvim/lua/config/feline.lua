@@ -6,13 +6,13 @@ local colors = {
     fg = '#a89984',
     black = '#282828',
     violet = '#d3869b',
-    red= "#cc241d",
-    green= "#98971a",
-    yellow= "#d79921",
-    blue= "#458588",
-    magenta= "#b16286",
-    cyan= "#689d6a",
-    white= "#a89984",
+    red = "#cc241d",
+    green = "#98971a",
+    yellow = "#d79921",
+    blue = "#458588",
+    magenta = "#b16286",
+    cyan = "#689d6a",
+    white = "#a89984",
 }
 
 local vi_mode_colors = {
@@ -34,6 +34,12 @@ local vi_mode_colors = {
     NONE = 'yellow'
 }
 
+local os_icons = {
+    linux = ' ',
+    macos = ' ',
+    windows = ' ',
+}
+
 local force_inactive = {
     filetypes = {
         'NvimTree',
@@ -48,6 +54,19 @@ local force_inactive = {
         'terminal',
     },
     bufnames = {}
+}
+
+local indicator = {
+    provider = ' ',
+    hl = function()
+        local val = {}
+
+        val.bg = vi_mode_utils.get_mode_color()
+        val.fg = 'black'
+
+        return val
+    end,
+    right_sep = ' '
 }
 
 local vi_mode = {
@@ -75,6 +94,23 @@ local filename = {
         },
     }
 }
+
+
+local navic = {
+    provider = function()
+        return require("nvim-navic").get_location()
+    end,
+    enabled = function()
+        return require("nvim-navic").is_available()
+    end,
+    left_sep = {
+        str = '> ',
+        hl = {
+            fg = 'white',
+        },
+    }
+}
+
 
 local gitBranch = {
     provider = 'git_branch',
@@ -136,18 +172,22 @@ local diagnosticInfo = {
     }
 }
 
-local LspName = {
-    provider = 'lsp_client_names',
+local fileFormatEncode = {
+    provider = function()
+        local os = vim.bo.fileformat:upper()
+        local encoding = vim.bo.fileencoding:upper()
+        local icon
+        if os == 'UNIX' then
+            icon = os_icons.linux
+        elseif os == 'MAC' then
+            icon = os_icons.macos
+        else
+            icon = os_icons.windows
+        end
+        return ' ' .. icon .. encoding
+    end,
     hl = {
-        fg = 'yellow',
-    },
-    right_sep = ' '
-}
-
-local fileFormat = {
-    provider = function() return '' .. vim.bo.fileformat:upper() .. '' end,
-    hl = {
-        fg = 'white',
+        fg = 'magenta',
     },
     right_sep = ' '
 }
@@ -160,10 +200,17 @@ local fileEncode = {
     right_sep = ' '
 }
 
+local fileType = {
+    provider = 'file_type',
+    hl = {
+        fg = 'green',
+    },
+}
+
 local lineInfo = {
     provider = 'position',
     hl = {
-        fg = 'white',
+        fg = 'green',
     },
     right_sep = ' '
 }
@@ -171,7 +218,7 @@ local lineInfo = {
 local linePercent = {
     provider = 'line_percentage',
     hl = {
-        fg = 'white',
+        fg = 'green',
     },
     right_sep = ' '
 }
@@ -179,33 +226,41 @@ local linePercent = {
 local scrollBar = {
     provider = 'scroll_bar',
     hl = {
-        fg = 'yellow',
+        fg = 'green',
     },
 }
 
-local fileType = {
-    provider = 'file_type',
-    hl = {
-        fg = 'fg',
-    },
-}
 
-local components = {
+local statusline = {
     active = {
-        { vi_mode, filename, gitBranch, diffAdd, diffModfified, diffRemove, diagnosticErrors, diagnosticWarn, diagnosticHint, diagnosticInfo },
-        { LspName },
-        { fileFormat, fileEncode, lineInfo, linePercent, scrollBar },
+        { vi_mode, filename, navic },
+        {},
+        { gitBranch, diffAdd, diffModfified, diffRemove, diagnosticErrors, diagnosticWarn, diagnosticHint, diagnosticInfo,
+            fileFormatEncode, lineInfo, linePercent, scrollBar },
     },
     inactive = {
         { vi_mode, fileType },
         {},
-        { fileFormat, fileEncode, lineInfo, linePercent, scrollBar },
+        { fileFormatEncode, fileEncode, lineInfo, linePercent, scrollBar },
+    },
+}
+
+local winbar = {
+    active = {
+        { filename, navic },
+        {},
+        {},
     },
 }
 
 require('feline').setup({
     theme = colors,
     vi_mode_colors = vi_mode_colors,
-    components = components,
+    components = statusline,
     force_inactive = force_inactive,
 })
+-- require('feline').winbar.setup({
+--     theme = colors,
+--     components = winbar,
+--     force_inactive = force_inactive,
+-- })
