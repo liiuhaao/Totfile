@@ -10,6 +10,7 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "none" })
 
 vim.lsp.protocol.CompletionItemKind = {
+    Copilot = " Copilot",
     Text = "󰦨 Text",
     Method = " Method",
     Function = "󰊕 Function",
@@ -64,6 +65,7 @@ vim.lsp.protocol.CompletionItemKind = {
 --     TypeParameter = "",
 -- }
 vim.lsp.protocol.CompletionItemKindName = {
+    Copilot = "Copilot",
     Text = "Text",
     Method = "Method",
     Function = "Function",

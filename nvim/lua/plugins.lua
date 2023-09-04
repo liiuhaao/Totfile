@@ -31,6 +31,17 @@ return require("packer").startup(function()
         end,
     })
 
+    use({
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({
+                suggestion = { enabled = false },
+                panel = { enabled = false },
+            })
+        end,
+    })
 
     use({
         "hrsh7th/nvim-cmp",
@@ -53,6 +64,14 @@ return require("packer").startup(function()
             require("config.nvim-cmp")
         end,
     })
+
+    use {
+        "zbirenbaum/copilot-cmp",
+        after = { "copilot.lua" },
+        config = function()
+            require("copilot_cmp").setup()
+        end
+    }
 
     use({
         "nvim-treesitter/nvim-treesitter",
@@ -116,6 +135,4 @@ return require("packer").startup(function()
             require 'alpha'.setup(require 'alpha.themes.startify'.config)
         end
     }
-
-
 end)
