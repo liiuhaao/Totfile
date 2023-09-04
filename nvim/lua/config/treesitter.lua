@@ -1,5 +1,5 @@
 require("nvim-treesitter.configs").setup({
-    ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "python", "kotlin", "java", "html" },
     sync_install = true,
     highlight = {
         enable = true, -- false will disable the whole extension

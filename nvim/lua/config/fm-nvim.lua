@@ -70,4 +70,4 @@ require("fm-nvim").setup({
     },
 })
 
-map("n", "<A-r>", ":Ranger<CR>", { noremap = true, silent = true })
+map("n", "<Leader>r", ":Ranger<CR>", { noremap = true, silent = true })

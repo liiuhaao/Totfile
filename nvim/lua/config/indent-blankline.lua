@@ -1,6 +1,0 @@
--- require("indent_blankline").setup({
---     buftype_exclude = { "terminal" },
---     -- show_end_of_line = true,
---     -- show_current_context = true,
--- })
--- vim.cmd([[hi IndentBlanklineContextChar guifg=#928374 gui=nocombine]])

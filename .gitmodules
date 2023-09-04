@@ -22,3 +22,6 @@
 [submodule "zsh/plugins/conda-zsh-completion"]
 	path = zsh/plugins/conda-zsh-completion
 	url = https://github.com/esc/conda-zsh-completion.git
+[submodule "zsh/plugins/zsh-brew"]
+	path = zsh/plugins/zsh-brew
+	url = https://github.com/wintermi/zsh-brew.git

@@ -1,7 +1,7 @@
 vim.opt.mouse = "a"
 vim.opt.encoding = "UTF-8"
 
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 vim.opt.updatetime = 1
 
@@ -12,7 +12,6 @@ vim.opt.undofile = true
 
 vim.opt.scrolloff = 2
 vim.opt.sidescrolloff = 15
-vim.opt.termguicolors = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -76,7 +75,7 @@ vim.opt.fillchars = {
     foldsep = "│",
 }
 
-vim.opt.showbreak = "﬌"
+vim.opt.showbreak = " "
 vim.opt.background = "dark"
 
 vim.opt.list = true
@@ -87,11 +86,9 @@ vim.opt.listchars = {
     extends = '»',
     precedes = '«',
     nbsp = '×',
-    eol = '',
+    -- eol = ' ',
 }
 vim.o.clipboard = "unnamedplus"
-
-vim.opt.termguicolors = true
 
 vim.g.netrw_winsize = 20
 vim.g.netrw_banner = 0
@@ -101,11 +98,11 @@ vim.g.netrw_localcopydircmd = "cp -r"
 vim.g.netrw_altv = 1
 
 vim.cmd([[syntax on]])
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme habamax]])
 
-vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
-vim.cmd([[hi VertSplit guibg=NONE ctermbg=NONE]])
-vim.cmd([[hi Tablinefill guibg=NONE]])
+--vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+--vim.cmd([[hi VertSplit guibg=NONE ctermbg=NONE]])
+--vim.cmd([[hi Tablinefill guibg=NONE]])
 
 
 -- Highlight on yank

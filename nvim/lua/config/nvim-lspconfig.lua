@@ -1,4 +1,6 @@
-local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+vim = vim
+
+local signs = { Error = "", Warn = "", Hint = " ", Info = "" }
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -8,31 +10,31 @@ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = "none" })
 
 vim.lsp.protocol.CompletionItemKind = {
-    Text = " Text",
-    Method = " Method",
-    Function = " Function",
+    Text = "󰦨 Text",
+    Method = " Method",
+    Function = "󰊕 Function",
     Constructor = " Constructor",
-    Field = " Field",
-    Variable = " Variable",
-    Class = "ﴯ Class",
-    Interface = " Interface",
-    Module = " Module",
-    Property = "ﰠ Property",
-    Unit = " Unit",
-    Value = " Value",
-    Enum = " Enum",
-    Keyword = " Keyword",
+    Field = " Field",
+    Variable = "󰫧 Variable",
+    Class = " Class",
+    Interface = " Interface",
+    Module = "󰕳 Module",
+    Property = " Property",
+    Unit = " Unit",
+    Value = " Value",
+    Enum = " Enum",
+    Keyword = " Keyword",
     Snippet = " Snippet",
-    Color = " Color",
-    File = " File",
-    Reference = " Reference",
-    Folder = " Folder",
-    EnumMember = " EnumMember",
-    Constant = " Constant",
-    Struct = " Struct",
-    Event = " Event",
-    Operator = " Operator",
-    TypeParameter = " TypeParameter",
+    Color = " Color",
+    File = " File",
+    Reference = " Reference",
+    Folder = " Folder",
+    EnumMember = " EnumMember",
+    Constant = " Constant",
+    Struct = " Struct",
+    Event = " Event",
+    Operator = " Operator",
+    TypeParameter = " TypeParameter",
 }
 -- vim.lsp.protocol.CompletionItemKind = {
 --     Text = "",
@@ -106,17 +108,6 @@ vim.diagnostic.config({
     severity_sort = true,
 })
 
-vim.cmd([[
-  highlight DiagnosticLineNrError guifg=#fb4934 gui=bold
-  highlight DiagnosticLineNrWarn guifg=#fe8019 gui=bold
-  highlight DiagnosticLineNrInfo guifg=#83a598 gui=bold
-  highlight DiagnosticLineNrHint guifg=#8ec07c gui=bold
-
-  " sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
-  " sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
-  " sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
-  " sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
-]])
 
 map("n", "<Leader>dl", "<cmd>lua vim.diagnostic.open_float()<CR>", { noremap = true, silent = true })
 map("n", "<Leader>dc", "<cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope='cursor'})<CR>",
@@ -124,7 +115,7 @@ map("n", "<Leader>dc", "<cmd>lua vim.diagnostic.open_float(nil, {focus=false, sc
 map("n", "<Leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<CR>", { noremap = true, silent = true })
 map("n", "<Leader>dn", "<cmd>lua vim.diagnostic.goto_next()<CR>", { noremap = true, silent = true })
 -- map("n", "<Leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", { noremap = true, silent = true })
-map("n", "<Leader>f", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", { noremap = true, silent = true })
+map("n", "<Leader>F", "<cmd>lua vim.lsp.buf.format({async=true})<CR>", { noremap = true, silent = true })
 
 local on_attach = function(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -167,34 +158,51 @@ capabilities.textDocument.completion.completionItem.resolveSupport = {
         "additionalTextEdits",
     },
 }
-require("lspconfig").html.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "/usr/bin/vscode-html-languageserver", "--stdio" },
-})
-require("lspconfig").cssls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "/usr/bin/vscode-css-languageserver", "--stdio" },
-})
-require("lspconfig").jsonls.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "/usr/bin/vscode-json-languageserver", "--stdio" },
-})
-require("lspconfig").sumneko_lua.setup({
-    on_attach = on_attach,
-    capabilities = capabilities,
-    cmd = { "/usr/bin/lua-language-server" },
-    require("lspconfig").jdtls.setup({ on_attach = on_attach, capabilities = capabilities, cmd = { "/usr/bin/jdtls" } }),
-})
+-- require("lspconfig").html.setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     cmd = { "/usr/bin/vscode-html-languageserver", "--stdio" },
+-- })
+-- require("lspconfig").cssls.setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     cmd = { "/usr/bin/vscode-css-languageserver", "--stdio" },
+-- })
+-- require("lspconfig").jsonls.setup({
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     cmd = { "/usr/bin/vscode-json-languageserver", "--stdio" },
+-- })
+-- require'lspconfig'.lua_ls.setup {
+--   on_init = function(client)
+--     local path = client.workspace_folders[1].name
+--     if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+--       client.config.settings = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+--         runtime = {
+--           -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+--           version = 'LuaJIT'
+--         },
+--         -- Make the server aware of Neovim runtime files
+--         workspace = {
+--           library = { vim.env.VIMRUNTIME }
+--           -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+--           -- library = vim.api.nvim_get_runtime_file("", true)
+--         }
+--       })
+--
+--       client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+--     end
+--     return true
+--   end
+-- }
 
-require("lspconfig").pylsp.setup({ on_attach = on_attach, capabilities = capabilities })
+-- require("lspconfig").pylsp.setup({ on_attach = on_attach, capabilities = capabilities })
 -- require("lspconfig").pyright.setup({ on_attach = on_attach, capabilities = capabilities })
-require("lspconfig").bashls.setup({ on_attach = on_attach, capabilities = capabilities })
-require("lspconfig").yamlls.setup({ on_attach = on_attach, capabilities = capabilities })
-require("lspconfig").texlab.setup({ on_attach = on_attach, capabilities = capabilities })
-require("lspconfig").clangd.setup({ on_attach = on_attach, capabilities = capabilities })
+-- require("lspconfig").bashls.setup({ on_attach = on_attach, capabilities = capabilities })
+-- require("lspconfig").isort.setup({ on_attach = on_attach, capabilities = capabilities })
+-- require("lspconfig").yamlls.setup({ on_attach = on_attach, capabilities = capabilities })
+-- require("lspconfig").texlab.setup({ on_attach = on_attach, capabilities = capabilities })
+-- require("lspconfig").clangd.setup({ on_attach = on_attach, capabilities = capabilities })
 
 -- vim.api.nvim_create_autocmd("CursorHold", {
 --     buffer = bufnr,

@@ -15,16 +15,22 @@ return require("packer").startup(function()
     })
 
     use({
-        "ellisonleao/gruvbox.nvim",
-        requires = { "rktjmp/lush.nvim" },
-    })
-
-    use({
         "neovim/nvim-lspconfig",
         config = function()
             require("config.nvim-lspconfig")
         end,
     })
+
+    use({
+        "williamboman/mason-lspconfig.nvim",
+        requires = {
+            "williamboman/mason.nvim",
+        },
+        config = function()
+            require("config.mason")
+        end,
+    })
+
 
     use({
         "hrsh7th/nvim-cmp",
@@ -69,16 +75,6 @@ return require("packer").startup(function()
 
     use({
         "lukas-reineke/indent-blankline.nvim",
-        config = function()
-            require("config.indent-blankline")
-        end,
-    })
-
-    use({
-        "norcalli/nvim-colorizer.lua",
-        config = function()
-            require("colorizer").setup()
-        end,
     })
 
     use({
@@ -98,59 +94,6 @@ return require("packer").startup(function()
     })
 
     use({
-        "lewis6991/gitsigns.nvim",
-        config = function()
-            require("gitsigns").setup()
-        end,
-    })
-
-    use({
-        "ibhagwan/fzf-lua",
-        config = function()
-            require("config.fzf")
-        end,
-    })
-
-    use({
-        "noib3/nvim-cokeline",
-        config = function()
-            require("config.cokeline")
-        end,
-    })
-
-    use {
-        'feline-nvim/feline.nvim',
-        requires = {
-            { "SmiteshP/nvim-navic" },
-        },
-        config = function()
-            require("config.feline")
-        end,
-    }
-
-
-    use({
-        "famiu/bufdelete.nvim",
-        config = function()
-            require("config.bufdelete")
-        end,
-    })
-
-    use({
-        "goolord/alpha-nvim",
-        config = function()
-            require("alpha").setup(require("alpha.themes.startify").opts)
-        end,
-    })
-
-    use({
-        "kyazdani42/nvim-tree.lua",
-        config = function()
-            require("config.nvim-tree")
-        end,
-    })
-
-    use({
         "is0n/fm-nvim",
         config = function()
             require("config.fm-nvim")
@@ -158,31 +101,21 @@ return require("packer").startup(function()
     })
 
     use({
-        "dccsillag/magma-nvim",
-        run = ":UpdateRemotePlugins",
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' } },
         config = function()
-            require("config.magma-nvim")
+            require("config.telescope")
         end,
     })
 
-    use({
-        "aserowy/tmux.nvim",
+
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'nvim-tree/nvim-web-devicons' },
         config = function()
-            require("config.tmux")
-        end,
-    })
+            require 'alpha'.setup(require 'alpha.themes.startify'.config)
+        end
+    }
 
-    use({
-        "tversteeg/registers.nvim"
-    })
 
-    use({
-        "iamcco/markdown-preview.nvim",
-        run = "cd app && npm install",
-        setup = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-            vim.g.mkdp_browser = "qutebrowser"
-        end,
-        ft = { "markdown" },
-    })
 end)
