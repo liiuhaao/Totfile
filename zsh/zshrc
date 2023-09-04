@@ -16,8 +16,6 @@ source ~/.config/zsh/plugins/zsh-autopair/autopair.zsh
 
 source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
 
-source ~/.config/zsh/plugins/ssh-connect/ssh-connect.sh
-
 source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/alias.zsh
 source ~/.config/zsh/prompt.zsh
