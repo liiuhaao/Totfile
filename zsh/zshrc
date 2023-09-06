@@ -2,7 +2,7 @@
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
-# setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 
 source ~/.config/zsh/plugins/conda-zsh-completion/conda-zsh-completion.plugin.zsh
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
@@ -13,7 +13,7 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 source ~/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 source ~/.config/zsh/plugins/zsh-autopair/autopair.zsh
-
+#
 source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
 
 source ~/.config/zsh/vi.zsh
