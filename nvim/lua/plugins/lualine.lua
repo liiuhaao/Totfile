@@ -10,6 +10,7 @@ return {
                     -- section_separators = { left = '', right = '' },
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
+                    globalstatus = true,
                 },
                 sections = {
                     lualine_a = { 'mode' },
@@ -51,8 +52,8 @@ return {
                 },
                 inactive_winbar = {
                     lualine_a = {},
-                    lualine_b = { 'filename' },
-                    lualine_c = {},
+                    lualine_b = {},
+                    lualine_c = { 'filename' },
                     lualine_x = {},
                     lualine_y = {},
                     lualine_z = {}

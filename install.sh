@@ -6,6 +6,9 @@ ln -sf $(pwd)/nvim ~/.config/nvim
 rm -rf ~/.config/ranger
 ln -sf $(pwd)/ranger ~/.config/ranger
 
+rm -rf ~/.config/joshuto
+ln -sf $(pwd)/joshuto ~/.config/joshuto
+
 rm -rf ~/.zshenv ~/.zprofile ~/.zshrc ~/.config/zsh
 ln -sf $(pwd)/zsh ~/.config/zsh
 ln -sf $(pwd)/zsh/zshenv ~/.zshenv

@@ -7,6 +7,6 @@ bash install.sh
 
 ## Neovim
 ```
-:PackerSync
+:Lazy<CR>S
 :Copilot auth
 ```
