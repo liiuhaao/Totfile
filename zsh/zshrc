@@ -1,20 +1,22 @@
+# CodeWhisperer pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.pre.zsh"
 # History
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 setopt HIST_IGNORE_ALL_DUPS
 
-source ~/.config/zsh/plugins/conda-zsh-completion/conda-zsh-completion.plugin.zsh
-source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
-source ~/.config/zsh/fzf-tab.zsh
+# source ~/.config/zsh/plugins/conda-zsh-completion/conda-zsh-completion.plugin.zsh
+# source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+# source ~/.config/zsh/fzf-tab.zsh
 
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 source ~/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 source ~/.config/zsh/plugins/zsh-autopair/autopair.zsh
-#
 source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
+source ~/.config/zsh/plugins/zsh-extract/extract.plugin.zsh
 
 source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/alias.zsh
@@ -41,3 +43,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# CodeWhisperer post block. Keep at the bottom of this file.
+#
+
+# CodeWhisperer post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/codewhisperer/shell/zshrc.post.zsh"
