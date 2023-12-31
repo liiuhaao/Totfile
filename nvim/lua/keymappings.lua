@@ -8,9 +8,9 @@ vim.keymap.set("n", "<Leader>W", ":W<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>Q", ":q!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<ESC>", "<cmd>noh<CR>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<C-w>", ":bd<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-q>", ":q!<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-s>", ":w!<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-w>", ":bd<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-q>", ":q!<CR>", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<C-s>", ":w!<CR>", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<Leader>p", ":bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>n", ":bnext<CR>", { noremap = true, silent = true })
