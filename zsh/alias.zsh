@@ -26,6 +26,7 @@ alias tmux='tmux -u -2'
 alias c='clear'
 alias zz='zellij'
 alias za='zellij a'
+alias y='yazi'
 
 # alias p='paru'
 # alias pu="paru -Syyu"

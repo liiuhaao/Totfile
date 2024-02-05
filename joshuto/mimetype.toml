@@ -1,9 +1,0 @@
-[class]
-text_default = [
-    { command = "nvim", args = [ "--" ] },
-    { command = "code", args = [ "--" ], fork = true, silent = true },
-]
-
-[mimetype]
-    [mimetype.text]
-    inherit = "text_default"
