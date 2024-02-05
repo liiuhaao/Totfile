@@ -2,8 +2,6 @@
 
 Totfile is my personal dotfile collection for terminal environments, crafted to enhance and personalize the command line experience.
 
-![UnixPorn](./UnixPorn.png)
-
 ## Installation
 
 Clone this repository and execute the installation script to set up your environment:
