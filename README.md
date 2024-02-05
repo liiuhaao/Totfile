@@ -15,7 +15,7 @@ bash install.sh
 
 - **[zsh](https://www.zsh.org):** Shell designed for interactive use.
 - **[Neovim](https://github.com/neovim/neovim):** Advanced text editor.
-- **[joshuto](https://github.com/kamiyaa/joshuto):** Terminal file manager.
+- **[yazi](https://github.com/sxyazi/yazi):** Terminal file manager.
 - **[zellij](https://github.com/zellij-org/zellij):** Terminal multiplexer.
 - **[lsd](https://github.com/Peltoche/lsd):** Modern, feature-rich alternative to 'ls'.
 
