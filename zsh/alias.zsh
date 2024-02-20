@@ -27,6 +27,11 @@ alias zz='zellij'
 alias za='zellij a'
 alias y='yazi'
 
+ alias gcc='gcc-13'
+ alias cc='gcc-13'
+ alias g++='g++-13'
+ alias c++='c++-13'
+
 # alias p='paru'
 # alias pu="paru -Syyu"
 # alias pp="paru -Slq | fzf -m --height ${FZF_TMUX_HEIGHT:-60%} --reverse --multi --preview 'bat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"

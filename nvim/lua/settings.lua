@@ -98,11 +98,10 @@ vim.g.netrw_localcopydircmd = "cp -r"
 vim.g.netrw_altv = 1
 
 vim.cmd([[syntax on]])
--- vim.cmd([[colorscheme habamax]])
 
-vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
-vim.cmd([[hi VertSplit guibg=NONE ctermbg=NONE]])
-vim.cmd([[hi Tablinefill guibg=NONE]])
+-- vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+-- vim.cmd([[hi VertSplit guibg=NONE ctermbg=NONE]])
+-- vim.cmd([[hi Tablinefill guibg=NONE]])
 
 
 -- Highlight on yank
