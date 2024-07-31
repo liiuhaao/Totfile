@@ -15,10 +15,9 @@ precmd_conda_info() {
 precmd_functions+=( precmd_conda_info )
 
 
-# PROMPT='%(?.%B%F{red}>%F{yellow}>%F{green}>%f%b .%B%F{red}>%F{red}>%F{red}>%f%b '
+PROMPT='%(?.%B%F{red}>%F{yellow}>%F{green}>%f%b .%B%F{red}>%F{red}>%F{red}>%f%b '
 PROMPT='%B%F{red}>%F{yellow}>%F{green}>%f%b '
-RPROMPT='${CONDA_ENV}${vcs_info_msg_0_}%F{purple}%~%f'
-#
+RPROMPT='${CONDA_ENV}${vcs_info_msg_0_}%F{purple}%~%f %F{cyan}%m%f'
 #
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '●'
