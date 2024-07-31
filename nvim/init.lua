@@ -1,5 +1,5 @@
 vim = vim
-map = vim.api.nvim_set_keymap
+map = vim.keymap.set
 autocmd = vim.api.nvim_create_autocmd
 
 vim.g.mapleader = " "

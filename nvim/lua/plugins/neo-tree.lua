@@ -7,7 +7,7 @@ return {
         },
         config = function()
             require("neo-tree").setup({
-                vim.keymap.set("n", "<Leader><Tab>", ":Neotree toggle<CR>"),
+                map("n", "<Leader><Tab>", ":Neotree toggle<CR>"),
             })
         end
     }
