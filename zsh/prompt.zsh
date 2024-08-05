@@ -19,7 +19,7 @@ NEWLINE=$'\n'
 
 
 PWD='%F{cyan} %~%f'
-GIT_INFO='%B%F{green}${vcs_info_msg_0_}%f%b'
+GIT_INFO='%F{green}${vcs_info_msg_0_}%f'
 # PROMPT_CHAR='%B%F{red}>%F{yellow}>%F{green}>%f%b'
 PROMPT_CHAR='%B%F{green}󰁕%f%b '
 
