@@ -21,7 +21,7 @@ PWD='%F{cyan} %~%f'
 GIT_INFO='%F{green}${vcs_info_msg_0_}%f'
 PROMPT_CHAR='%B%F{red}>%F{yellow}>%F{green}>%f%b '
 PROMPT_CHAR='%B%F{green}󰁕%f%b '
-PROMPT_CHAR='%B%F{%(?.green.red)}󰁕%f%b '
+# PROMPT_CHAR='%B%F{%(?.green.red)}󰁕%f%b '
 
 # CONDA_ENV='%F{red} ($(basename $CONDA_PREFIX))%f  '
 # NAME='%F{blue} %m%f  '
@@ -42,4 +42,21 @@ TRANSIENT_PROMPT="${TIME} ${PWD} ${PROMPT_CHAR}"
 zle -N zle-line-finish transient_prompt
 function transient_prompt {
     zle && PROMPT=$TRANSIENT_PROMPT RPROMPT= zle reset-prompt && zle -R
+}
+
+preexec() {
+  start_time=$(date +%s)
+}
+precmd() {
+    command_status=$?
+    if [[ -n "$start_time" ]]; then
+        end_time=$(date +%s)
+        elapsed=$(( end_time - start_time ))
+        formatted_date=$(date "+%Y-%m-%d %H:%M:%S")
+        if [[ $command_status -eq 0 ]]; then
+            print -P "%B%F{green}Success ✓%f    %F{black}«Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
+        else
+            print -P "%B%F{red}Error ✗%f    %F{black}«Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
+        fi
+    fi
 }
