@@ -6,7 +6,6 @@ ln -sf $(pwd)/script ~/.config/script
 rm -rf ~/.zshenv ~/.zprofile ~/.zshrc ~/.config/zsh
 ln -sf $(pwd)/zsh ~/.config/zsh
 ln -sf $(pwd)/zsh/zshenv ~/.zshenv
-ln -sf $(pwd)/zsh/zprofile ~/.zprofile
 ln -sf $(pwd)/zsh/zshrc ~/.zshrc
 ./zsh/fzf/install
 
