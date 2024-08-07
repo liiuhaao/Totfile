@@ -3,8 +3,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_R_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DEFAULT_OPTS='--bind=tab:down,shift-tab:up,ctrl-space:toggle --reverse'
-export PATH=$PATH:'~/.config/script'
-export PATH=$PATH:'~/.cargo/bin'
+export PATH=$PATH:"$HOME/.config/script"
+export PATH=$PATH:"$HOME/.cargo/bin"
 
 export MANPAGER="nvim +Man!"
 export VISUAL="nvim"
