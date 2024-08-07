@@ -10,7 +10,7 @@ return {
         config = function()
             require("mason").setup()
             require("mason-lspconfig").setup {
-                ensure_installed = { "lua_ls", "clangd", "bashls" },
+                ensure_installed = { "lua_ls", "clangd", "bashls", "basedpyright" },
                 automatic_installation = true,
             }
             require("mason-null-ls").setup({
@@ -31,18 +31,20 @@ return {
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             require("mason-lspconfig").setup_handlers {
                 function(server_name)
-                    local lsp_settings = {}
+                    local opts = { capabilities = capabilities }
                     if server_name == "basedpyright" then
-                        lsp_settings = {
+                        opts.settings = {
                             python = {
-                                pythonPath = vim.fn.trim(vim.fn.systemlist('which python')[1]),
+                                pythonPath = vim.fn.exepath("python"),
+                            },
+                            basedpyright = {
+                                analysis = {
+                                    typeCheckingMode = "standard"
+                                }
                             }
                         }
                     end
-                    require("lspconfig")[server_name].setup {
-                        capabilities = capabilities,
-                        settings = lsp_settings,
-                    }
+                    require("lspconfig")[server_name].setup(opts)
                 end,
             }
         end,

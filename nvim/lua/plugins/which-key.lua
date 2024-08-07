@@ -24,7 +24,13 @@ return
             { "<c-f>", "<right>", mode = "i" },
             { "<c-b>", "<left>", mode = "i" },
 
-            { "<leader>b", group = "Buffer" },
+            {
+                "<leader>b",
+                group = "Buffer",
+                expand = function()
+                    return require("which-key.extras").expand.buf()
+                end
+            },
             { "<leader>bn", "<cmd>bnext<cr>", mode = "n" },
             { "<leader>bp", "<cmd>bn<cr>", mode = "n" },
             { "<leader>bn", "<cmd>bd<cr>", mode = "n" },
