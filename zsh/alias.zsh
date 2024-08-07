@@ -1,10 +1,5 @@
 # alias vi='nvim'
 # alias vim='nvim'
-
-
-alias proxy_up='export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890'
-alias proxy_down='unset all_proxy'
-# alias ls='eza --color=always --icons --group-directories-first'
 alias ls='lsd --group-directories-first'
 # alias ls='ls --color'
 alias l='ls'
@@ -27,14 +22,17 @@ alias zz='zellij'
 alias za='zellij a'
 alias y='yazi'
 
- alias gcc='gcc-13'
- alias cc='gcc-13'
- alias g++='g++-13'
- alias c++='c++-13'
+alias gcc='gcc-13'
+alias cc='gcc-13'
+alias g++='g++-13'
+alias c++='c++-13'
 
-# alias p='paru'
-# alias pu="paru -Syyu"
-# alias pp="paru -Slq | fzf -m --height ${FZF_TMUX_HEIGHT:-60%} --reverse --multi --preview 'bat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -S"
-# alias pq="paru -Qq | fzf -m --height ${FZF_TMUX_HEIGHT:-60%} --reverse --multi --preview 'bat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -Si"
-# alias pr="paru -Qq | fzf -m --height ${FZF_TMUX_HEIGHT:-60%} --reverse --multi --preview 'bat <(paru -Si {1}) <(paru -Fl {1} | awk \"{print \$2}\")' | xargs -ro paru -Rsn"
-
+function yy() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
+alias y='yy'
