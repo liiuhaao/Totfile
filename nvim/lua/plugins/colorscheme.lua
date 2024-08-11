@@ -8,14 +8,15 @@ return {
         priority = 1000, -- make sure to load this before all the other start plugins
         config = function()
             -- vim.cmd([[colorscheme gruvbox-material]])
+            -- vim.cmd([[colorscheme everforest]])
             require('onedark').setup {
                 -- transparent = true,      -- Show/hide background
                 lualine = {
                     transparent = true, -- lualine center bar transparency
                 },
             }
-            vim.cmd([[colorscheme onedark]])
-            -- vim.cmd([[colorscheme everforest]])
+
+            vim.cmd("colorscheme onedark")
         end,
     }
 }

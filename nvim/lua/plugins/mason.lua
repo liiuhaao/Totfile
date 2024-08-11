@@ -49,6 +49,9 @@ return {
                             }
                         }
                     end
+                    opts.on_attach = function(client, bufnr)
+                        require("nvim-navic").attach(client, bufnr)
+                    end
                     require("lspconfig")[server_name].setup(opts)
                 end,
             }
