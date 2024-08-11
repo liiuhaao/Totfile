@@ -42,6 +42,12 @@ return {
                         require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
                     end,
                 },
+                -- window = {
+                --     documentation = cmp.config.window.bordered(),
+                --     completion = cmp.config.window.bordered({
+                --         winhighlight = 'Normal:CmpPmenu,CursorLine:PmenuSel,Search:None'
+                --     }),
+                -- },
                 mapping = {
                     ['<CR>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
@@ -93,12 +99,8 @@ return {
 
                 formatting = {
                     fields = { "kind", "abbr", "menu" },
-                    -- format = lspkind.cmp_format(),
                     format = lspkind.cmp_format({
                         mode = 'symbol',
-                        maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
-                        ellipsis_char = '...',
-                        show_labelDetails = true,
                     })
                 },
 
