@@ -1,6 +1,7 @@
 # alias vi='nvim'
 # alias vim='nvim'
-alias ls='lsd --group-directories-first'
+# alias ls='lsd --group-directories-first'
+alias ls='eza --group-directories-first --icons'
 # alias ls='ls --color'
 alias l='ls'
 alias lt='ls --tree'

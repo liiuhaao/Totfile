@@ -54,9 +54,11 @@ precmd() {
         elapsed=$(( end_time - start_time ))
         formatted_date=$(date "+%Y-%m-%d %H:%M:%S")
         if [[ $command_status -eq 0 ]]; then
-            print -P "%B%F{green}Success ✓%f    %F{black}«Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
+            # print -P "%B%F{green}Success ✓%f    %F{black}«Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
+            print -P "%B%F{black}«Success ✓    Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
         else
-            print -P "%B%F{red}Error ✗%f    %F{black}«Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
+            # print -P "%B%F{red}Error ✗%f    %F{black}«Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
+            print -P "%B%F{black}«Error ✗    Ended: ${formatted_date}    Elapsed time: ${elapsed} seconds»%f%b"
         fi
     fi
 }

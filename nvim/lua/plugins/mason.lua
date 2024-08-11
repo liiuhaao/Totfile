@@ -10,7 +10,7 @@ return {
         config = function()
             require("mason").setup()
             require("mason-lspconfig").setup {
-                ensure_installed = { "lua_ls", "clangd", "bashls", "basedpyright" },
+                ensure_installed = { "basedpyright" },
                 automatic_installation = true,
             }
             require("mason-null-ls").setup({
@@ -39,7 +39,12 @@ return {
                             },
                             basedpyright = {
                                 analysis = {
-                                    typeCheckingMode = "standard"
+                                    typeCheckingMode = "standard",
+                                    diagnosticSeverityOverrides = {
+                                        reportAttributeAccessIssue = false,
+                                        reportPossiblyUnboundVariable = false,
+                                        reportOptionalSubscript = false,
+                                    },
                                 }
                             }
                         }
