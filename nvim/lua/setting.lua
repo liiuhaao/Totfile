@@ -119,6 +119,56 @@ vim.diagnostic.config({
     severity_sort = true,
 })
 
+-- Switch and save colorScheme
+local colorscheme_file = vim.fn.stdpath('config') .. '/colorscheme.lua'
+
+if vim.fn.filereadable(colorscheme_file) == 1 then
+    dofile(colorscheme_file)
+else
+    vim.cmd([[colorscheme everforest]]) -- 默认主题
+end
+
+function SaveColorscheme(scheme)
+    if scheme and scheme ~= '' then
+        local file = io.open(colorscheme_file, 'w')
+        if file then
+            file:write('vim.cmd([[colorscheme ' .. scheme .. ']])\n')
+            file:close()
+        else
+            print('Error: Unable to open colorscheme file for writing.')
+        end
+    else
+        print('Error: Invalid colorscheme name.')
+    end
+end
+
+function GetColorSchemes(prefix)
+    local all_schemes = vim.fn.getcompletion('', 'color')
+    local filtered_schemes = {}
+    for _, scheme in ipairs(all_schemes) do
+        if vim.startswith(scheme, prefix) then
+            table.insert(filtered_schemes, scheme)
+        end
+    end
+    return filtered_schemes
+end
+
+vim.api.nvim_create_user_command('SwitchColorScheme', function(opts)
+    local scheme = opts.args
+    if scheme and scheme ~= '' then
+        vim.cmd('colorscheme ' .. scheme)
+        SaveColorscheme(scheme)
+    else
+        print('Error: Invalid colorscheme name.')
+    end
+end, {
+    nargs = 1,
+    complete = function(arg_lead, cmd_line, cmd_pos)
+        local prefix = arg_lead
+        return GetColorSchemes(prefix)
+    end,
+})
+
 -- Highlight on yank
 autocmd("TextYankPost", {
     callback = function()
