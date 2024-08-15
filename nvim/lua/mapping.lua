@@ -1,5 +1,3 @@
-vim.g.mapleader = " "
-
 map("n", "<leader>", "<nop>")
 map("n", "<esc>", "<cmd>noh><cr>")
 

@@ -1,6 +1,8 @@
 vim.opt.mouse               = "a"
 vim.opt.encoding            = "UTF-8"
 
+vim.opt.background          = "dark"
+vim.cmd("colorscheme onedark")
 vim.opt.syntax              = "enable"
 vim.opt.termguicolors       = true
 vim.opt.updatetime          = 1
@@ -77,7 +79,6 @@ vim.opt.fillchars           = {
 }
 
 vim.opt.showbreak           = '↪'
-vim.opt.background          = "dark"
 
 vim.opt.list                = true
 vim.opt.listchars           = {
@@ -89,7 +90,7 @@ vim.opt.listchars           = {
     nbsp = '×',
     -- eol = ' ',
 }
-vim.o.clipboard             = "unnamedplus"
+vim.opt.clipboard             = "unnamedplus"
 
 vim.g.netrw_winsize         = 20
 vim.g.netrw_banner          = 0
@@ -117,83 +118,4 @@ vim.diagnostic.config({
     },
     update_in_insert = true,
     severity_sort = true,
-})
-
--- Switch and save colorScheme
-local colorscheme_file = vim.fn.stdpath('config') .. '/colorscheme.lua'
-
-if vim.fn.filereadable(colorscheme_file) == 1 then
-    dofile(colorscheme_file)
-else
-    vim.cmd([[colorscheme everforest]]) -- 默认主题
-end
-
-function SaveColorscheme(scheme)
-    if scheme and scheme ~= '' then
-        local file = io.open(colorscheme_file, 'w')
-        if file then
-            file:write('vim.cmd([[colorscheme ' .. scheme .. ']])\n')
-            file:close()
-        else
-            print('Error: Unable to open colorscheme file for writing.')
-        end
-    else
-        print('Error: Invalid colorscheme name.')
-    end
-end
-
-function GetColorSchemes(prefix)
-    local all_schemes = vim.fn.getcompletion('', 'color')
-    local filtered_schemes = {}
-    for _, scheme in ipairs(all_schemes) do
-        if vim.startswith(scheme, prefix) then
-            table.insert(filtered_schemes, scheme)
-        end
-    end
-    return filtered_schemes
-end
-
-vim.api.nvim_create_user_command('SwitchColorScheme', function(opts)
-    local scheme = opts.args
-    if scheme and scheme ~= '' then
-        vim.cmd('colorscheme ' .. scheme)
-        SaveColorscheme(scheme)
-    else
-        print('Error: Invalid colorscheme name.')
-    end
-end, {
-    nargs = 1,
-    complete = function(arg_lead, cmd_line, cmd_pos)
-        local prefix = arg_lead
-        return GetColorSchemes(prefix)
-    end,
-})
-
--- Highlight on yank
-autocmd("TextYankPost", {
-    callback = function()
-        vim.highlight.on_yank({ timeout = 500 })
-    end,
-})
-
--- Use relative & absolute line numbers in 'n' & 'i' modes respectively
-autocmd("InsertEnter", {
-    callback = function()
-        vim.opt.relativenumber = false
-    end,
-})
-autocmd("InsertLeave", {
-    callback = function()
-        vim.opt.relativenumber = true
-    end,
-})
-
--- Open a file from its last left off position
-autocmd("BufReadPost", {
-    callback = function()
-        if not vim.fn.expand("%:p"):match ".git" and vim.fn.line "'\"" > 1 and vim.fn.line "'\"" <= vim.fn.line "$" then
-            vim.cmd "normal! g'\""
-            vim.cmd "normal zz"
-        end
-    end,
 })
