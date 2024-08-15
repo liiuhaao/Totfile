@@ -15,18 +15,10 @@ alias e='exit'
 alias mkdir='mkdir -pv'
 alias mv='mv -i'
 alias cp='cp -i'
-# alias rm='rm -i'
-alias bat='bat --theme=gruvbox-dark'
-alias tmux='tmux -u -2'
+alias bat='bat'
 alias c='clear'
-alias zz='zellij'
-alias za='zellij a'
 alias y='yazi'
-
-alias gcc='gcc-13'
-alias cc='gcc-13'
-alias g++='g++-13'
-alias c++='c++-13'
+alias lg='lazygit'
 
 function yy() {
     local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -37,3 +29,9 @@ function yy() {
     rm -f -- "$tmp"
 }
 alias y='yy'
+
+alias gcc='gcc-13'
+alias cc='gcc-13'
+alias g++='g++-13'
+alias c++='c++-13'
+
