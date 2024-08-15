@@ -1,5 +1,5 @@
 map("n", "<leader>", "<nop>")
-map("n", "<esc>", "<cmd>noh><cr>")
+map("n", "<esc>", "<cmd>noh<cr>")
 
 map("n", "<leader>s", "<cmd>w<cr>", { desc = "Save" })
 map("n", "<c-s>", "<cmd>w<cr>", { desc = "Save" })
@@ -37,6 +37,7 @@ map("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Diag
 
 map("n", "<leader>cn", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
 map("n", "<leader>ca", "<cmd>lua require('fzf-lua').lsp_code_actions()<cr>", { desc = "Code Action" })
+map("n", "<leader>cc", "<cmd>CopilotChatToggle<cr>", { desc = "Copilot Chat" })
 
 -- map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go to definition" })
 map("n", "gd", "<cmd>lua require('fzf-lua').lsp_definitions()<cr>", { desc = "Go to definitions" })
