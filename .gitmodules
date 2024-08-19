@@ -22,9 +22,3 @@
 [submodule "zsh/plugins/zsh-brew"]
 	path = zsh/plugins/zsh-brew
 	url = https://github.com/wintermi/zsh-brew.git
-[submodule "zsh/plugins/ssh-connect"]
-	path = zsh/plugins/ssh-connect
-	url = https://github.com/gko/ssh-connect
-[submodule "zsh/plugins/zsh-extract"]
-	path = zsh/plugins/zsh-extract
-	url = https://github.com/le0me55i/zsh-extract.git
