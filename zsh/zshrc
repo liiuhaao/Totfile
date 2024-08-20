@@ -1,10 +1,9 @@
- if [[ $TERM_PROGRAM != "WarpTerminal" ]]; then
-##### WHAT YOU WANT TO DISABLE FOR WARP - BELOW
-
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=~/.cache/zsh_history
 setopt HIST_IGNORE_ALL_DUPS
+
+export LANG="zh_CN.UTF-8"
 
 source ~/.config/zsh/plugins/conda-zsh-completion/conda-zsh-completion.plugin.zsh
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
@@ -12,25 +11,18 @@ source ~/.config/zsh/fzf-tab.zsh
 
 source ~/.config/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-
 source ~/.config/zsh/plugins/zsh-autopair/autopair.zsh
-source ~/.config/zsh/plugins/zsh-extract/extract.plugin.zsh
+source ~/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 
+if [[ "$(uname)" == "Darwin" ]]; then
+    source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
+fi
+
+source ~/.config/zsh/alias.zsh
 source ~/.config/zsh/prompt.zsh
 source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/bindkey.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 conda config --set changeps1 false
-##### WHAT YOU WANT TO DISABLE FOR WARP - ABOVE
-fi
 
-source ~/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
-
-# Only load zsh-brew on macOS
-if [[ "$(uname)" == "Darwin" ]]; then
-    source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
-fi
-
-export LANG="zh_CN.UTF-8"
-source ~/.config/zsh/alias.zsh

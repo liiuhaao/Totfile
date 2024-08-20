@@ -1,7 +1,7 @@
 
 
 # vi mode bindkey -v
-bindkey -v
+# bindkey -v
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {

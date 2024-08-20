@@ -22,6 +22,8 @@ map("n", "<c-k>", "<c-w>k")
 map("n", "<c-l>", "<c-w>l")
 map("i", "<c-f>", "<right>")
 map("i", "<c-b>", "<left>")
+map("i", "<c-a>", "<esc>^i")
+map("i", "<c-e>", "<esc>$a")
 
 map("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<cr>", { desc = "Find file" })
 map("n", "<leader>fo", "<cmd>lua require('fzf-lua').oldfiles()<cr>", { desc = "Find oldfiles" })
