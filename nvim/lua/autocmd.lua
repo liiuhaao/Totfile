@@ -17,7 +17,6 @@ autocmd("InsertLeave", {
     end,
 })
 
--- Open a file from its last left off position
 autocmd("BufReadPost", {
     callback = function()
         if not vim.fn.expand("%:p"):match ".git" and vim.fn.line "'\"" > 1 and vim.fn.line "'\"" <= vim.fn.line "$" then
@@ -26,3 +25,16 @@ autocmd("BufReadPost", {
         end
     end,
 })
+
+
+-- vim.api.nvim_create_autocmd("VimLeave", {
+--     callback = function()
+--         local tmux_env = vim.fn.getenv("TMUX")
+--         if tmux_env ~= vim.NIL and tmux_env ~= "" then
+--             local pane_count = tonumber(vim.fn.system("tmux list-panes | wc -l"))
+--             if pane_count > 1 then
+--                 vim.fn.system("tmux killp")
+--             end
+--         end
+--     end
+-- })

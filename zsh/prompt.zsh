@@ -17,7 +17,21 @@ zstyle ':vcs_info:git:*' actionformats '%F{blue}󰊢 %b|%a%f %c%u  '
 
 NEW_LINE=$'\n'
 
-PWD='%F{cyan} %~%f'
+# Determine the system icon based on OS type
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    SYS_ICON=''  # macOS
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    SYS_ICON=''  # Linux
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    SYS_ICON=''  # Windows (Cygwin)
+elif [[ "$OSTYPE" == "msys" ]]; then
+    SYS_ICON=''  # Windows (MSYS2)
+else
+    SYS_ICON=''  # Default
+fi
+
+# PWD='%F{cyan} %~%f'
+PWD='%F{cyan}${SYS_ICON} %~%f'
 GIT_INFO='%F{green}${vcs_info_msg_0_}%f'
 PROMPT_CHAR='%B%F{red}>%F{yellow}>%F{green}>%f%b '
 PROMPT_CHAR='%B%F{green}󰁕%f%b '
@@ -31,8 +45,14 @@ TIME='%F{yellow}󱑏 %*%f'
 LINEUP=$'\e[1A'
 LINEDOWN=$'\e[1B'
 
+function TMUX_INFO() {
+  if [[ -n "$TMUX" ]]; then
+    echo "%F{magenta}[$(tmux display-message -p '#S')]%f"
+  fi
+}
+
 TOP_LEFT="${PWD}  ${GIT_INFO}"
-TOP_RIGHT="${CONDA_ENV}  ${NAME}"
+TOP_RIGHT="$(TMUX_INFO)  ${CONDA_ENV}  ${NAME}"
 BOTTOWN_LEFT="${PROMPT_CHAR}"
 
 PROMPT="${TOP_LEFT}${NEW_LINE}${BOTTOWN_LEFT}"
@@ -43,6 +63,7 @@ zle -N zle-line-finish transient_prompt
 function transient_prompt {
     zle && PROMPT=$TRANSIENT_PROMPT RPROMPT= zle reset-prompt && zle -R
 }
+
 
 preexec() {
   start_time=$(date +%s)

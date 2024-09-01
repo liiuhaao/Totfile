@@ -44,6 +44,7 @@ return {
                                         reportAttributeAccessIssue = false,
                                         reportPossiblyUnboundVariable = false,
                                         reportOptionalSubscript = false,
+                                        reportArgumentType = false,
                                     },
                                 }
                             }

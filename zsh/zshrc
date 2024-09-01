@@ -18,11 +18,14 @@ if [[ "$(uname)" == "Darwin" ]]; then
     source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
 fi
 
+source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/alias.zsh
 source ~/.config/zsh/prompt.zsh
-source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/bindkey.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 conda config --set changeps1 false
 
+# if [[ -z "$TMUX" && $- == *i* ]]; then
+#     tmux attach-session -t default || tmux new-session -s default
+# fi

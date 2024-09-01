@@ -12,3 +12,7 @@ bindkey '^u' kill-whole-line
 bindkey '^r' history-incremental-search-backward
 bindkey '^s' history-incremental-search-forward
 bindkey '^t' transpose-chars
+
+bindkey -s '^[d' 'tmux attach || tmux\n'
+# bindkey -s '^[ ' 'tmux attach || tmux\n'
+
