@@ -68,3 +68,15 @@ map("v", ">", ">gv", { desc = "Indent Increase" })
 
 map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle NvimTree" })
 map("n", "<c-e>", "<cmd>Neotree toggle<cr>", { desc = "Toggle NvimTree" })
+
+
+map("n", "<leader>1", "<cmd>LualineBuffersJump! 1<cr>")
+map("n", "<leader>2", "<cmd>LualineBuffersJump! 2<cr>")
+map("n", "<leader>3", "<cmd>LualineBuffersJump! 3<cr>")
+map("n", "<leader>4", "<cmd>LualineBuffersJump! 4<cr>")
+map("n", "<leader>5", "<cmd>LualineBuffersJump! 5<cr>")
+map("n", "<leader>6", "<cmd>LualineBuffersJump! 6<cr>")
+map("n", "<leader>7", "<cmd>LualineBuffersJump! 7<cr>")
+map("n", "<leader>8", "<cmd>LualineBuffersJump! 8<cr>")
+map("n", "<leader>9", "<cmd>LualineBuffersJump! 9<cr>")
+map("n", "<leader>0", "<cmd>LualineBuffersJump! $<cr>")
