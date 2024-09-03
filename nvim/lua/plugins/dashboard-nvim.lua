@@ -15,7 +15,7 @@ return {
                         desc = ' Sync ',
                         group = 'Blue',
                         action = 'Lazy sync',
-                        key = 's', 
+                        key = 's',
                     },
                     {
                         icon = ' 󰈞 ',

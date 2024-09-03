@@ -3,8 +3,7 @@ return {
         'nvim-lualine/lualine.nvim',
         config = function()
             require('lualine').setup {
-                options = {
-                    theme = 'auto',
+                options = { theme = 'auto',
                     -- component_separators = { left = '', right = '' },
                     -- section_separators = { left = '', right = '' },
                     -- section_separators = { left = '', right = '' },
@@ -16,13 +15,12 @@ return {
                     lualine_a = { "mode" },
                     lualine_b = {
                         "branch",
-                    },
-                    lualine_c = {
                         {
                             "diff",
                             symbols = { added = ' ', modified = ' ', removed = ' ' },
-                            separator = "|"
                         },
+                    },
+                    lualine_c = {
                         {
                             "diagnostics",
                             symbols = { error = ' ', warn = ' ', info = ' ', hint = '󰌵 ' },
@@ -30,17 +28,17 @@ return {
                         },
                     },
                     lualine_x = {
-                        { "selectioncount", separator = "|" },
-                        { "searchcount",    separator = "|" },
-                        -- { '%=' },
-                        { "filesize",      separator = "|" },
-                        { "encoding",       separator = "|" },
-                        { "fileformat",      separator = "|" },
-                        { "filetype",       separator = "|" },
-                        { "location",       separator = "|", padding = { left = 0, right = 1 } },
+                        { "selectioncount" },
+                        { "searchcount" },
+                        { '%=' },
+                        { "filesize" },
+                        { "fileformat" },
+                        { "encoding" },
+                        { "filetype" },
                     },
                     lualine_y = {
                         { "progress" },
+                        { "location" },
                     },
 
                     lualine_z = {
