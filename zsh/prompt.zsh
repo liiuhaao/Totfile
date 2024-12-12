@@ -33,7 +33,7 @@ fi
 # PWD='%F{cyan} %~%f'
 PWD='%F{cyan}${SYS_ICON} %~%f'
 GIT_INFO='%F{green}${vcs_info_msg_0_}%f'
-PROMPT_CHAR='%B%F{red}>%F{yellow}>%F{green}>%f%b '
+# PROMPT_CHAR='%B%F{red}>%F{yellow}>%F{green}>%f%b '
 PROMPT_CHAR='%B%F{green}󰁕%f%b '
 # PROMPT_CHAR='%B%F{%(?.green.red)}󰁕%f%b '
 

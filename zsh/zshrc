@@ -26,6 +26,3 @@ source ~/.config/zsh/bindkey.zsh
 
 conda config --set changeps1 false
 
-# if [[ -z "$TMUX" && $- == *i* ]]; then
-#     tmux attach-session -t default || tmux new-session -s default
-# fi

@@ -8,3 +8,4 @@ require("lazynvim")
 require("mapping")
 require("setting")
 require("autocmd")
+
