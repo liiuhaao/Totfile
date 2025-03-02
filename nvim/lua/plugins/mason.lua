@@ -3,18 +3,31 @@ return {
         "williamboman/mason.nvim",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            "neovim/nvim-lspconfig",
             "williamboman/mason-lspconfig.nvim",
-            -- "jay-babu/mason-null-ls.nvim",
-            -- "nvimtools/none-ls.nvim",
+            "neovim/nvim-lspconfig",
+            "jay-babu/mason-null-ls.nvim",
+            "nvimtools/none-ls.nvim",
         },
         config = function()
-            -- require("nvim-lspconfig").setup()
             require("mason").setup()
             require("mason-lspconfig").setup {
-                ensure_installed = { "basedpyright","black", "isort", "prettier" },
+                ensure_installed = { "basedpyright" },
                 automatic_installation = true,
             }
+            require("mason-null-ls").setup({
+                ensure_installed = { "black", "isort", "prettier" }
+            })
+            require("null-ls").setup({
+                sources = {
+                    require("null-ls").builtins.formatting.black.with({
+                        extra_args = function(params)
+                            return { "--line-length", 200 }
+                        end,
+                    }),
+                    require("null-ls").builtins.formatting.isort,
+                    require("null-ls").builtins.formatting.prettier,
+                },
+            })
 
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             require("mason-lspconfig").setup_handlers {

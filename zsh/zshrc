@@ -26,3 +26,4 @@ source ~/.config/zsh/bindkey.zsh
 
 conda config --set changeps1 false
 
+eval "$(direnv hook zsh)"
