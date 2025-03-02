@@ -38,11 +38,11 @@ map("i", "<c-b>", "<left>")
 map("i", "<c-a>", "<esc>^i")
 map("i", "<c-e>", "<esc>$a")
 
-map("n", "<leader>ff", "<cmd>lua require('fzf-lua').files()<cr>", { desc = "Find file" })
-map("n", "<leader>fo", "<cmd>lua require('fzf-lua').oldfiles()<cr>", { desc = "Find oldfiles" })
-map("n", "<leader>fg", "<cmd>lua require('fzf-lua').live_grep()<cr>", { desc = "Live grep" })
-map("n", "<leader>fb", "<cmd>lua require('fzf-lua').buffers()<cr>", { desc = "Find buffer" })
-map("n", "<leader>f<leader>", "<cmd>lua require('fzf-lua').builtin()<cr>", { desc = "Fzf builtin" })
+map("n", "<leader>ff", "<cmd>FzfLua files<cr>", { desc = "Find file" })
+map("n", "<leader>fo", "<cmd>FzfLua oldfiles<cr>", { desc = "Find oldfiles" })
+map("n", "<leader>fg", "<cmd>FzfLua live_grep<cr>", { desc = "Live grep" })
+map("n", "<leader>fb", "<cmd>FzfLua buffers<cr>", { desc = "Find buffer" })
+map("n", "<leader>f<leader>", "<cmd>FzfLua builtin<cr>", { desc = "Fzf builtin" })
 
 map("n", "<leader>dl", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Diagnostic float" })
 map("n", "<leader>dc", "<cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope='cursor'})<cr>",
@@ -51,12 +51,12 @@ map("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Diag
 map("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Diagnostic Next" })
 
 map("n", "<leader>cn", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
-map("n", "<leader>ca", "<cmd>lua require('fzf-lua').lsp_code_actions()<cr>", { desc = "Code Action" })
+map("n", "<leader>ca", "<cmd>FzfLua lsp_code_actions()<cr>", { desc = "Code Action" })
 map("n", "<leader>cc", "<cmd>CopilotChatToggle<cr>", { desc = "Copilot Chat" })
 
 -- map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go to definition" })
-map("n", "gd", "<cmd>lua require('fzf-lua').lsp_definitions()<cr>", { desc = "Go to definitions" })
-map("n", "gr", "<cmd>lua require('fzf-lua').lsp_references()<cr>", { desc = "Go to references" })
+map("n", "gd", "<cmd>FzfLua lsp_definitions<cr>", { desc = "Go to definitions" })
+map("n", "gr", "<cmd>FzfLua lsp_references<cr>", { desc = "Go to references" })
 
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Lsp hover" })
 map("i", "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Lsp signature help" })

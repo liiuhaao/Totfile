@@ -6,18 +6,10 @@ autoload -U compinit && compinit
 zstyle ':completion:*:git-checkout:*' sort false
 # set descriptions format to enable group support
 zstyle ':completion:*:descriptions' format '[%d]'
-# set list-colors to enable filename colorizing
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
 # cd
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons --group-directories-first -l $realpath'
-zstyle ':fzf-tab:complete:cd:*' fzf-flags --height=50% --preview-window=right:wrap
-
-zstyle ':fzf-tab:complete:ls:*' fzf-preview 'eza --color=always --icons --group-directories-first -l $realpath'
-zstyle ':fzf-tab:complete:ls:*' fzf-flags --height=50% --preview-window=right:wrap
-
-zstyle ':fzf-tab:complete:eza:*' fzf-preview 'eza --color=always --icons --group-directories-first -l $realpath'
-zstyle ':fzf-tab:complete:eza:*' fzf-flags --height=50% --preview-window=right:wrap
+zstyle ':fzf-tab:complete:(cd|ls|eza):*' fzf-preview 'eza --color=always --icons --group-directories-first -l $realpath'
+zstyle ':fzf-tab:complete:(cd|ls|eza):*' fzf-flags --height=50% --preview-window=right:wrap
 
 # ls zstyle ':fzf-tab:complete:ls:*' fzf-preview 'less ${(Q)realpath}'
 
