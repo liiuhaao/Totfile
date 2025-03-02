@@ -15,6 +15,7 @@ zstyle ':vcs_info:*' conflictstr '%F{magenta}✖%f'
 zstyle ':vcs_info:git:*' formats '%F{blue}󰊢 %b%f %c%u  '
 zstyle ':vcs_info:git:*' actionformats '%F{blue}󰊢 %b|%a%f %c%u  '
 
+
 NEW_LINE=$'\n'
 
 # Determine the system icon based on OS type
@@ -37,28 +38,27 @@ GIT_INFO='%F{green}${vcs_info_msg_0_}%f'
 PROMPT_CHAR='%B%F{green}󰁕%f%b '
 # PROMPT_CHAR='%B%F{%(?.green.red)}󰁕%f%b '
 
-# CONDA_ENV='%F{red} ($(basename $CONDA_PREFIX))%f  '
-# NAME='%F{blue} %m%f  '
-CONDA_ENV='%F{red}[$(basename $CONDA_PREFIX)]%f'
-NAME='%F{blue}[%m]%f'
+# NAME='%F{blue}[%m]%f'
+NAME='%F{blue} %m%f'
 TIME='%F{yellow}󱑏 %*%f'
 LINEUP=$'\e[1A'
 LINEDOWN=$'\e[1B'
+# CONDA_ENV='%F{red}[$(basename $CONDA_PREFIX)]%f'
+CONDA_ENV='%F{red}${CONDA_PREFIX:+ $(basename $CONDA_PREFIX)}%f'
 
 function TMUX_INFO() {
-  if [[ -n "$TMUX" ]]; then
-    echo "%F{magenta}[$(tmux display-message -p '#S')]%f"
-  fi
+    echo "%F{magenta}${TMUX:+ $(tmux display-message -p '#S')}%f"
 }
 
 TOP_LEFT="${PWD}  ${GIT_INFO}"
 TOP_RIGHT="$(TMUX_INFO)  ${CONDA_ENV}  ${NAME}"
-BOTTOWN_LEFT="${PROMPT_CHAR}"
+BOTTOM_LEFT="${PROMPT_CHAR}"
 
-PROMPT="${TOP_LEFT}${NEW_LINE}${BOTTOWN_LEFT}"
+PROMPT="${TOP_LEFT}${NEW_LINE}${BOTTOM_LEFT}"
 RPROMPT=%{${LINEUP}%}${TOP_RIGHT}%{${LINEDOWN}%}
 
-TRANSIENT_PROMPT="${TIME} ${PWD} ${PROMPT_CHAR}"
+TRANSIENT_PROMPT="${TIME} ${PWD} ${PROMPT_CHAR}$"
+
 zle -N zle-line-finish transient_prompt
 function transient_prompt {
     zle && PROMPT=$TRANSIENT_PROMPT RPROMPT= zle reset-prompt && zle -R
