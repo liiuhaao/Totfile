@@ -40,8 +40,9 @@ return {
                             },
                             basedpyright = {
                                 analysis = {
-                                    typeCheckingMode = "standard",
+                                    typeCheckingMode = "basic",
                                     diagnosticSeverityOverrides = {
+                                        reportOptionalIterable = "warning",
                                         reportAttributeAccessIssue = false,
                                         reportPossiblyUnboundVariable = false,
                                         reportOptionalSubscript = false,
