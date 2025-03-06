@@ -39,15 +39,15 @@ PROMPT_CHAR='%B%F{green}󰁕%f%b '
 # PROMPT_CHAR='%B%F{%(?.green.red)}󰁕%f%b '
 
 # NAME='%F{blue}[%m]%f'
-NAME='%F{blue} %m%f'
+NAME='%F{blue}[%m%f]'
 TIME='%F{yellow}󱑏 %*%f'
 LINEUP=$'\e[1A'
 LINEDOWN=$'\e[1B'
 # CONDA_ENV='%F{red}[$(basename $CONDA_PREFIX)]%f'
-CONDA_ENV='%F{red}${CONDA_PREFIX:+ $(basename $CONDA_PREFIX)}%f'
+CONDA_ENV='%F{red}${CONDA_PREFIX:+[$(basename $CONDA_PREFIX)]}%f'
 
 function TMUX_INFO() {
-    echo "%F{magenta}${TMUX:+ $(tmux display-message -p '#S')}%f"
+    echo "%F{magenta}${TMUX:+[$(tmux display-message -p '#S')]}%f"
 }
 
 TOP_LEFT="${PWD}  ${GIT_INFO}"
