@@ -14,6 +14,8 @@ source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.config/zsh/plugins/zsh-autopair/autopair.zsh
 source ~/.config/zsh/plugins/zsh-z/zsh-z.plugin.zsh
 
+source ~/.config/zsh/plugins/zsh-autovenv/zsh-autovenv.plugin.zsh
+
 if [[ "$(uname)" == "Darwin" ]]; then
     source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
 fi
@@ -24,16 +26,16 @@ source ~/.config/zsh/prompt.zsh
 source ~/.config/zsh/bindkey.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-conda config --set changeps1 false
-
 autoload -Uz compinit && compinit -i
 
 if command -v direnv >/dev/null 2>&1; then
     DIRENV_LOG_FORMAT=
     eval "$(direnv hook zsh)"
-    
+
     # ensure compatibility tmux <-> direnv
     if [ -n "$TMUX" ] && [ -n "$DIRENV_DIR" ]; then
         direnv reload > /dev/null 2>&1
     fi
 fi
+
+

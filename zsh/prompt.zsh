@@ -39,19 +39,28 @@ PROMPT_CHAR='%B%F{green}󰁕%f%b '
 # PROMPT_CHAR='%B%F{%(?.green.red)}󰁕%f%b '
 
 # NAME='%F{blue}[%m]%f'
-NAME='%F{blue}[%m%f]'
+NAME='%F{blue}(%m)%f'
 TIME='%F{yellow}󱑏 %*%f'
 LINEUP=$'\e[1A'
 LINEDOWN=$'\e[1B'
-# CONDA_ENV='%F{red}[$(basename $CONDA_PREFIX)]%f'
-CONDA_ENV='%F{red}${CONDA_PREFIX:+[$(basename $CONDA_PREFIX)]}%f'
 
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+function VENV_INFO() {
+    [[ -n $VIRTUAL_ENV_PROMPT ]] && echo "%F{red}${VIRTUAL_ENV_PROMPT} %f"
+}
+
+if command -v conda &> /dev/null; then
+    conda config --set changeps1 false
+fi
+function CONDA_INFO() {
+    [[ -n $CONDA_PREFIX ]] && echo "%F{red}($(basename $CONDA_PREFIX))  %f"
+}
 function TMUX_INFO() {
-    echo "%F{magenta}${TMUX:+[$(tmux display-message -p '#S')]}%f"
+    [[ -n $TMUX ]] && echo "%F{magenta}($(tmux display-message -p '#S'))  %f"
 }
 
 TOP_LEFT="${PWD}  ${GIT_INFO}"
-TOP_RIGHT="$(TMUX_INFO)  ${CONDA_ENV}  ${NAME}"
+TOP_RIGHT="\$(TMUX_INFO)\$(VENV_INFO)\$(CONDA_INFO)${NAME}"
 BOTTOM_LEFT="${PROMPT_CHAR}"
 
 PROMPT="${TOP_LEFT}${NEW_LINE}${BOTTOM_LEFT}"
