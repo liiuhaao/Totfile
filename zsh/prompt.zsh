@@ -33,7 +33,7 @@ fi
 
 # PWD='%F{cyan} %~%f'
 PWD='%F{cyan}${SYS_ICON} %~%f'
-GIT_INFO='%F{green}${vcs_info_msg_0_}%f'
+GIT_INFO='  %F{green}${vcs_info_msg_0_}%f'
 # PROMPT_CHAR='%B%F{red}>%F{yellow}>%F{green}>%f%b '
 PROMPT_CHAR='%B%F{green}󰁕%f%b '
 # PROMPT_CHAR='%B%F{%(?.green.red)}󰁕%f%b '
@@ -59,7 +59,7 @@ function TMUX_INFO() {
     [[ -n $TMUX ]] && echo "%F{magenta}($(tmux display-message -p '#S'))  %f"
 }
 
-TOP_LEFT="${PWD}  ${GIT_INFO}"
+TOP_LEFT="${PWD}${GIT_INFO}"
 TOP_RIGHT="\$(TMUX_INFO)\$(VENV_INFO)\$(CONDA_INFO)${NAME}"
 BOTTOM_LEFT="${PROMPT_CHAR}"
 
