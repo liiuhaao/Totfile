@@ -9,7 +9,7 @@ ICON_PYTHON="🐍"
 ICON_DEACTIVATE="🍂"
 
 function activate_venv {
-    current_dir="$PWD"
+    current_dir="$(pwd -P)"
     while [ "$current_dir" != "/" ]; do
         if [ -d "$current_dir/.venv" ]; then
             OLD_VIRTURAL_ENV_PROMPT="$VIRTUAL_ENV_PROMPT"
@@ -20,7 +20,7 @@ function activate_venv {
                 echo -e "${GREEN}${ICON_ENV} Activating virtual environment: ${CYAN}$env_name${RESET}"
                 echo -e "${BLUE}${ICON_PYTHON} Python version: ${CYAN}$python_version${RESET}"
             fi
-            return 0
+            return
         fi
         current_dir=$(dirname "$current_dir")
     done
