@@ -27,6 +27,8 @@ source ~/.config/zsh/bindkey.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 autoload -Uz compinit && compinit -i
+eval "$(uv generate-shell-completion zsh)"
+
 
 if command -v direnv >/dev/null 2>&1; then
     DIRENV_LOG_FORMAT=
