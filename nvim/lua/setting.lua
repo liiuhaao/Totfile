@@ -2,7 +2,6 @@ vim.opt.mouse               = "a"
 vim.opt.encoding            = "UTF-8"
 
 vim.opt.background          = "dark"
-vim.cmd("colorscheme onedark")
 vim.opt.syntax              = "enable"
 vim.opt.termguicolors       = true
 vim.opt.updatetime          = 1

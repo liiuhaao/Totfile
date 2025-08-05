@@ -5,7 +5,6 @@ autocmd = vim.api.nvim_create_autocmd
 vim.g.mapleader = " "
 
 
-require("lazynvim")
-require("mapping")
 require("setting")
+require("mapping")
 require("autocmd")

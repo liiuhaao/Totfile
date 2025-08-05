@@ -1,8 +1,2 @@
-return {
-    {
-        "ibhagwan/fzf-lua",
-        config = function()
-            require("fzf-lua").setup({})
-        end
-    }
-}
+vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
+require("fzf-lua").setup({})

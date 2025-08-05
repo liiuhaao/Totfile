@@ -26,7 +26,6 @@ autocmd("BufReadPost", {
     end,
 })
 
-
 vim.api.nvim_create_autocmd("VimLeave", {
     callback = function()
         local tmux_env = vim.fn.getenv("TMUX")
@@ -38,3 +37,19 @@ vim.api.nvim_create_autocmd("VimLeave", {
         end
     end
 })
+
+-- plugins
+local function load_plugins()
+    local plugins_dir = vim.fn.stdpath("config") .. "/lua/plugins"
+    local files = vim.fn.glob(plugins_dir .. "/*.lua", true, true)
+    for _, file in ipairs(files) do
+        local name = vim.fn.fnamemodify(file, ":t:r")  -- 文件名（不含扩展）
+        local module = "plugins." .. name
+        local ok, err = pcall(require, module)
+        if not ok then
+            vim.notify("Failed to load plugin config " .. module .. ": " .. err, vim.log.levels.ERROR)
+        end
+    end
+end
+
+load_plugins()
