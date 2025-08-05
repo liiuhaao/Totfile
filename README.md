@@ -11,11 +11,3 @@ git clone --recurse-submodules https://github.com/liiuhaao/Totfile.git
 cd Totfile
 bash install.sh
 ```
-
-## Usage
-
-For Neovim
-```
-:Lazy<CR>S
-:Copilot auth
-```
