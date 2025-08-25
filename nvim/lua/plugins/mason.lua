@@ -39,14 +39,14 @@ for server_name, settings in pairs(servers) do
 end
 
 mason_lspconfig.setup({
-    ensure_installed = vim.tbl_keys(servers),
+    -- ensure_installed = vim.tbl_keys(servers),
     automatic_enable = false,
     automatic_installation = true,
 });
 
 
 require("mason-null-ls").setup({
-    ensure_installed = { "black", "isort", "prettier" },
+    -- ensure_installed = { "black", "isort", "prettier" },
     automatic_installation = true,
 })
 
