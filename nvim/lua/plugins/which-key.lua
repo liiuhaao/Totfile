@@ -2,14 +2,13 @@ vim.pack.add({ "https://github.com/folke/which-key.nvim" })
 local wk = require("which-key")
 wk.add({
     mode = { "n", "v" },
-    { "<leader>s", group = "Save", icon = "" },
+    { "<leader>w", group = "Save", icon = "" },
     { "<leader>t", group = "Terminal" },
     { "<leader>e", group = "Explore", icon = "󰙅" },
     { "<leader>b", group = "buffer" },
     { "<leader>c", group = "code", icon = "" },
     { "<leader>d", group = "diagnostic" },
     { "<leader>f", group = "find" },
-    { "<leader>w", proxy = "<c-w>", group = "windows" },
     { "<leader>-", desc = "Split horizentally", icon = "" },
     { "<leader>\\", desc = "Split vertically", icon = "" },
     { "[", group = "prev" },

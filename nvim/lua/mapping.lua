@@ -1,15 +1,13 @@
 map("n", "<leader>", "<nop>")
 map("n", "<esc>", "<cmd>noh<cr>")
 
-map("n", "<leader>s", "<cmd>w<cr>", { desc = "Save" })
-map("n", "<c-s>", "<cmd>w<cr>", { desc = "Save" })
+map("n", "<leader>w", "<cmd>w<cr>", { desc = "Save" })
+-- map("n", "<c-s>", "<cmd>w<cr>", { desc = "Save" })
 
 map("n", "<leader>q", "<cmd>q<cr>", { desc = "Quit" })
 map("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quit force" })
-map("n", "<c-q>", "<cmd>q<cr>", { desc = "Quit" })
-map("n", "<a-q>", "<cmd>q<cr>", { desc = "Quit" })
+-- map("n", "<c-q>", "<cmd>q<cr>", { desc = "Quit" })
 
--- map("n", "<c-w>", "<cmd>bd<cr>", { desc = "Delete buffer" })
 map("n", "<c-n>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<c-p>", "<cmd>bprev<cr>", { desc = "Prev buffer" })
 
@@ -57,8 +55,7 @@ map("n", "<leader>F", "<cmd>lua vim.lsp.buf.format({async=true})<cr>", { desc = 
 map("v", "<", "<gv", { desc = "Indent Decrease" })
 map("v", ">", ">gv", { desc = "Indent Increase" })
 
-map("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle NvimTree" })
-map("n", "<c-e>", "<cmd>Neotree toggle<cr>", { desc = "Toggle NvimTree" })
+map("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 
 map("n", "<leader>1", "<cmd>LualineBuffersJump! 1<cr>")
