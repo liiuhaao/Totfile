@@ -68,3 +68,6 @@ map("n", "<leader>7", "<cmd>LualineBuffersJump! 7<cr>")
 map("n", "<leader>8", "<cmd>LualineBuffersJump! 8<cr>")
 map("n", "<leader>9", "<cmd>LualineBuffersJump! 9<cr>")
 map("n", "<leader>0", "<cmd>LualineBuffersJump! $<cr>")
+
+
+map("n", "<leader>p", function() require("plugin-view").open() end )
