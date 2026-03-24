@@ -1,0 +1,118 @@
+{
+  "plugins": {
+    "blink.cmp": {
+      "rev": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8",
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
+    },
+    "dashboard-nvim": {
+      "rev": "c42fcfbd96dfcaa486c0a0ab52494316f1c31350",
+      "src": "https://github.com/nvimdev/dashboard-nvim"
+    },
+    "everforest-nvim": {
+      "rev": "2eb7c348f880ba93de4d98cae049c9441f5d4d49",
+      "src": "https://github.com/neanias/everforest-nvim"
+    },
+    "fyler.nvim": {
+      "rev": "3b9a2d4afc9eb2d46f1c93353fd66a37b1ba1f28",
+      "src": "https://github.com/A7Lavinraj/fyler.nvim"
+    },
+    "fzf-lua": {
+      "rev": "5c40d45bb37ad6355b1e028daa127dfe22be6857",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "8270378ab83540b03d09c0194ba3e208f9d0cb72",
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
+    },
+    "indent-blankline.nvim": {
+      "rev": "005b56001b2cb30bfa61b7986bc50657816ba4ba",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
+    },
+    "lensline.nvim": {
+      "rev": "e057fe1845d58ca52967c8805eb6ff8f4d16f3d7",
+      "src": "https://github.com/oribarilan/lensline.nvim"
+    },
+    "lualine.nvim": {
+      "rev": "a94fc68960665e54408fe37dcf573193c4ce82c9",
+      "src": "https://github.com/nvim-lualine/lualine.nvim"
+    },
+    "mason-lspconfig.nvim": {
+      "rev": "844d247d998c2f9a6a3baad8bb9748edc55ce69f",
+      "src": "https://github.com/williamboman/mason-lspconfig.nvim"
+    },
+    "mason-null-ls.nvim": {
+      "rev": "de19726de7260c68d94691afb057fa73d3cc53e7",
+      "src": "https://github.com/jay-babu/mason-null-ls.nvim"
+    },
+    "mason.nvim": {
+      "rev": "9e25c98d4826998460926f8c5c2284848d80ae89",
+      "src": "https://github.com/williamboman/mason.nvim"
+    },
+    "neo-tree.nvim": {
+      "rev": "46fa0c22ca39e05fe15744102d21feb07fe9a94a",
+      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim"
+    },
+    "noice.nvim": {
+      "rev": "0427460c2d7f673ad60eb02b35f5e9926cf67c59",
+      "src": "https://github.com/folke/noice.nvim"
+    },
+    "none-ls.nvim": {
+      "rev": "46f2713c88a0b4e4bf134b59577659851ddd31cf",
+      "src": "https://github.com/nvimtools/none-ls.nvim"
+    },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim-lspconfig": {
+      "rev": "63a38440989c58e1f100373ab603fd24665bdc9a",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-navic": {
+      "rev": "f887d794a0f4594882814d7780980a949200a238",
+      "src": "https://github.com/SmiteshP/nvim-navic"
+    },
+    "nvim-treesitter": {
+      "rev": "85ec015f3be42a3c2c04648ff99d617d9609e5f0",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
+    },
+    "nvim-web-devicons": {
+      "rev": "3362099de3368aa620a8105b19ed04c2053e38c0",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "oil-git-status.nvim": {
+      "rev": "4b5cf53842c17a09420919e655a6a559da3112d7",
+      "src": "https://github.com/refractalize/oil-git-status.nvim"
+    },
+    "oil-git.nvim": {
+      "rev": "3abffa67597aab5f915816d71e96cbed76147016",
+      "src": "https://github.com/benomahony/oil-git.nvim"
+    },
+    "oil-lsp-diagnostics.nvim": {
+      "rev": "e04e3c387262b958fee75382f8ff66eae9d037f4",
+      "src": "https://github.com/JezerM/oil-lsp-diagnostics.nvim"
+    },
+    "oil.nvim": {
+      "rev": "07f80ad645895af849a597d1cac897059d89b686",
+      "src": "https://github.com/stevearc/oil.nvim"
+    },
+    "plenary.nvim": {
+      "rev": "b9fd5226c2f76c951fc8ed5923d85e4de065e509",
+      "src": "https://github.com/nvim-lua/plenary.nvim"
+    },
+    "plugin-view.nvim": {
+      "rev": "369c80aff5e71b1147f69ecbefa4b46d97f733d2",
+      "src": "https://github.com/adriankarlen/plugin-view.nvim"
+    },
+    "switchcolor.nvim": {
+      "rev": "ea7bdaeb72eab9983ba3f4fa8715293cd7b6735c",
+      "src": "https://www.github.com/liiuhaao/switchcolor.nvim"
+    },
+    "which-key.nvim": {
+      "rev": "370ec46f710e058c9c1646273e6b225acf47cbed",
+      "src": "https://github.com/folke/which-key.nvim"
+    }
+  }
+}
