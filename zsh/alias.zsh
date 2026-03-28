@@ -1,8 +1,8 @@
-# alias vi='nvim'
-# alias vim='nvim'
-# alias ls='lsd --group-directories-first'
-alias ls='eza --group-directories-first --icons=always'
-# alias ls='ls --color'
+if command -v eza >/dev/null 2>&1; then
+    alias ls='eza --group-directories-first --icons=always'
+else
+    alias ls='ls --color'
+fi
 alias l='ls'
 alias lt='ls --tree'
 alias lat='ls -a --tree'
@@ -15,7 +15,6 @@ alias e='exit'
 alias mkdir='mkdir -pv'
 alias mv='mv -i'
 alias cp='cp -i'
-alias bat='bat'
 alias c='clear'
 alias y='yazi'
 alias lg='lazygit'
