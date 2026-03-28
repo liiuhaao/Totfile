@@ -1,5 +1,10 @@
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
+bindkey '^h' vi-backward-char
+bindkey '^l' vi-forward-char
+bindkey '^k' up-history
+bindkey '^j' down-history
+
 # bindkey '^b' vi-backward-char
 # bindkey '^f' vi-forward-char
 # bindkey '^p' up-history
