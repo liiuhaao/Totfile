@@ -20,7 +20,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     source ~/.config/zsh/plugins/zsh-brew/zsh-brew.plugin.zsh
 fi
 
-source ~/.config/zsh/vi.zsh
 source ~/.config/zsh/alias.zsh
 source ~/.config/zsh/prompt.zsh
 source ~/.config/zsh/bindkey.zsh
