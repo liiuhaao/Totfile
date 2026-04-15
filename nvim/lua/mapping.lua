@@ -11,8 +11,6 @@ map("n", "<leader>Q", "<cmd>q!<cr>", { desc = "Quit force" })
 map("n", "<c-n>", "<cmd>bnext<cr>", { desc = "Next buffer" })
 map("n", "<c-p>", "<cmd>bprev<cr>", { desc = "Prev buffer" })
 
-map("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "Next buffer" })
-map("n", "<leader>bp", "<cmd>bprev<cr>", { desc = "Prev buffer" })
 map("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete buffer" })
 
 map("n", "<leader>-", "<cmd>split<cr>", { desc = "Split horizontally" })
@@ -36,16 +34,13 @@ map("n", "<leader>f<leader>", "<cmd>FzfLua builtin<cr>", { desc = "Fzf builtin" 
 map("n", "<leader>dl", "<cmd>lua vim.diagnostic.open_float()<cr>", { desc = "Diagnostic float" })
 map("n", "<leader>dc", "<cmd>lua vim.diagnostic.open_float(nil, {focus=false, scope='cursor'})<cr>",
     { desc = "Diagnostic cursor float" })
-map("n", "<leader>dp", "<cmd>lua vim.diagnostic.goto_prev()<cr>", { desc = "Diagnostic prev" })
-map("n", "<leader>dn", "<cmd>lua vim.diagnostic.goto_next()<cr>", { desc = "Diagnostic Next" })
+map("n", "<leader>dp", function() vim.diagnostic.jump({ count = -1 }) end, { desc = "Diagnostic prev" })
+map("n", "<leader>dn", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Diagnostic next" })
 
-map("n", "<leader>cn", "<cmd>lua vim.lsp.buf.rename()<cr>", { desc = "Rename" })
-map("n", "<leader>ca", "<cmd>FzfLua lsp_code_actions()<cr>", { desc = "Code Action" })
-map("n", "<leader>cc", "<cmd>CopilotChatToggle<cr>", { desc = "Copilot Chat" })
 
 -- map("n", "<leader>gd", "<cmd>lua vim.lsp.buf.definition()<cr>", { desc = "Go to definition" })
 map("n", "gd", "<cmd>FzfLua lsp_definitions<cr>", { desc = "Go to definitions" })
-map("n", "gr", "<cmd>FzfLua lsp_references<cr>", { desc = "Go to references" })
+map("n", "grr", "<cmd>FzfLua lsp_references<cr>", { desc = "Go to references" })
 
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>", { desc = "Lsp hover" })
 map("i", "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<cr>", { desc = "Lsp signature help" })
@@ -70,4 +65,3 @@ map("n", "<leader>9", "<cmd>LualineBuffersJump! 9<cr>")
 map("n", "<leader>0", "<cmd>LualineBuffersJump! $<cr>")
 
 
-map("n", "<leader>p", function() require("plugin-view").open() end )

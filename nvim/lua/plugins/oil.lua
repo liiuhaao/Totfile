@@ -2,6 +2,7 @@ vim.pack.add({
     "https://github.com/stevearc/oil.nvim",
     "https://github.com/benomahony/oil-git.nvim",
 })
+local detail = false
 require("oil").setup({
     keymaps = {
         ["gd"] = {

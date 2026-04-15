@@ -5,7 +5,3 @@ vim.pack.add({
     },
 })
 require'nvim-treesitter'.install { 'python' }
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = { '<filetype>' },
-    callback = function() vim.treesitter.start() end,
-})
